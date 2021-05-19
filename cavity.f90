@@ -20,7 +20,6 @@ program cavity
 
     latticePoints = latticePoint(u=0.0, v=0.0)
 
-    !h = 1.0 / real(latticeSizeY)
     open(11, file='lattice.csv')
     do k = 1, latticeSizeX
         write(11, '(*(f0.0:" "))') latticePoints(:, i)%u
@@ -61,7 +60,6 @@ program cavity
                         latticePoints(i, j-1)%u - &
                         latticePoints(i, j)%v) / 4.0
                 end if
-                !write(*,*) i, j
             end do
         end do
     end do

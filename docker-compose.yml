@@ -1,0 +1,9 @@
+version: '3'
+services:
+
+  fortran:
+    build: .
+    container_name: lab_fortran
+    volumes:
+      - .:/home/lab_fortran”
+    tty: true
