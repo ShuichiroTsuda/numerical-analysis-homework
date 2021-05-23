@@ -113,7 +113,7 @@ program cavity
 
     open(11, file='cavity_omega.csv')
     do l = 1, latticeSizeY
-        write(12, '(*(f0.10:" "))') latticePoints(:, l)%omega
+        write(11, '(*(f0.10:" "))') latticePoints(:, l)%omega
     end do
     close(11)
 
