@@ -2,7 +2,10 @@ program cavity
     implicit none
 
     type :: latticePoint
-        double precision u, v
+        double precision u ! = phi
+        double precision v ! = - h ^ 2 * omega
+        double precision phi, omega
+        double precision velocityX, velocityY !u, vが参考資料の別変数とかぶっているので別の変数で表す
     end type latticePoint
 
     integer, parameter :: latticeSizeX = 10
@@ -12,13 +15,11 @@ program cavity
 
     double precision :: h = 1.0 / latticeSizeX
     
-
     type(latticePoint) :: latticePoints(latticeSizeX, latticeSizeY)
-
 
     integer :: i, j, k, l, m
 
-    latticePoints = latticePoint(u=0.0, v=0.0)
+    latticePoints = latticePoint(u=0.0, v=0.0, velocityX=0.0, velocityY=0.0)
 
     open(11, file='lattice.csv')
     do k = 1, latticeSizeX
@@ -30,35 +31,35 @@ program cavity
         do i = 1, latticeSizeX
             do j = 1, latticeSizeY
                 if (i == 1) then 
-                    latticePoints(i, j)%u = 0
-                    latticePoints(i, j)%v = 2.0 * latticePoints(i + 1, j)%u
+                    latticePoints(i, j)%phi = 0
+                    latticePoints(i, j)%omega = 2.0 * latticePoints(i + 1, j)%phi
                 else if (i == latticeSizeX) then
-                    latticePoints(i, j)%u = 0
-                    latticePoints(i, j)%v = 2.0 * latticePoints(i - 1, j)%u
+                    latticePoints(i, j)%phi = 0
+                    latticePoints(i, j)%omega = 2.0 * latticePoints(i - 1, j)%phi
                 else if (j == 1) then
-                    latticePoints(i, j)%u = 0
-                    latticePoints(i, j)%v = 2.0 * latticePoints(i , j + 1)%u  
+                    latticePoints(i, j)%phi = 0
+                    latticePoints(i, j)%omega = 2.0 * latticePoints(i , j + 1)%phi  
                 else if (j == latticeSizeY) then 
-                    latticePoints(i, j)%u = 0
-                    latticePoints(i, j)%v = 2.0 * (latticePoints(i , j - 1)%u - h)
+                    latticePoints(i, j)%phi = 0
+                    latticePoints(i, j)%omega = 2.0 * (latticePoints(i , j - 1)%phi - h)
                 else
-                    latticePoints(i, j)%v = &
-                        (latticePoints(i-1, j)%v + &
-                        latticePoints(i+1, j)%v + &
-                        latticePoints(i, j-1)%v + &
-                        latticePoints(i, j+1)%v) / 4.0 + &
-                        (latticePoints(i-1, j)%v - latticePoints(i+1, j)%v) * &
-                        (latticePoints(i, j-1)%u - latticePoints(i, j+1)%u) - &
-                        (latticePoints(i-1, j)%u - latticePoints(i+1, j)%u) * &
-                        (latticePoints(i, j-1)%v - latticePoints(i, j+1)%v) * &
+                    latticePoints(i, j)%omega = &
+                        (latticePoints(i-1, j)%omega + &
+                        latticePoints(i+1, j)%omega + &
+                        latticePoints(i, j-1)%omega + &
+                        latticePoints(i, j+1)%omega) / 4.0 + &
+                        (latticePoints(i-1, j)%omega - latticePoints(i+1, j)%omega) * &
+                        (latticePoints(i, j-1)%phi - latticePoints(i, j+1)%phi) - &
+                        (latticePoints(i-1, j)%phi - latticePoints(i+1, j)%phi) * &
+                        (latticePoints(i, j-1)%omega - latticePoints(i, j+1)%omega) * &
                         reynolds / 16.0
                     
-                    latticePoints(i, j)%u = &
-                        (latticePoints(i-1, j)%u + &
-                        latticePoints(i+1, j)%u + &
-                        latticePoints(i, j+1)%u + &
-                        latticePoints(i, j-1)%u - &
-                        latticePoints(i, j)%v) / 4.0
+                    latticePoints(i, j)%phi = &
+                        (latticePoints(i-1, j)%phi + &
+                        latticePoints(i+1, j)%phi + &
+                        latticePoints(i, j+1)%phi + &
+                        latticePoints(i, j-1)%phi - &
+                        latticePoints(i, j)%omega) / 4.0
                 end if
             end do
         end do
