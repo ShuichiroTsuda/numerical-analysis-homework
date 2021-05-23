@@ -2,10 +2,8 @@ program cavity
     implicit none
 
     type :: latticePoint
-        double precision u ! = phi
-        double precision v ! = - h ^ 2 * omega
         double precision phi, omega
-        double precision velocityX, velocityY !u, vが参考資料の別変数とかぶっているので別の変数で表す
+        double precision u, v
     end type latticePoint
 
     integer, parameter :: latticeSizeX = 10
@@ -19,7 +17,7 @@ program cavity
 
     integer :: i, j, k, l, m
 
-    latticePoints = latticePoint(u=0.0, v=0.0, velocityX=0.0, velocityY=0.0)
+    latticePoints = latticePoint(phi=0.0, omega=0.0, u=0.0, v=0.0)
 
     open(11, file='lattice.csv')
     do k = 1, latticeSizeX
@@ -64,6 +62,14 @@ program cavity
             end do
         end do
     end do
+
+    !v = - h ^ 2 * omegaより変換 
+    do i = 1, latticeSizeX
+        do j = 1, latticeSizeY
+            latticePoints(i, j)%omega = - latticePoints(i, j)%omega / h ** 2.0
+        end do
+    end do
+    
     
     open(10, file='cavity_u.csv')
     do k = 1, latticeSizeY
