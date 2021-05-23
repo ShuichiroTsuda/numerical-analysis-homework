@@ -16,9 +16,10 @@ program cavity
     type(latticePoint) :: latticePoints(latticeSizeX, latticeSizeY)
     type(latticePoint) :: lastLaticePoint !収束判断のための直前の値
 
-    integer :: i, j, k, l, m
+    integer :: i, j, k, l
+    integer :: loopCount = 0
 
-    logical :: shouldContinue
+    logical :: shouldContinue = .true.
 
     double precision, parameter :: convergenceThreshold = 0.00001
 
@@ -30,8 +31,9 @@ program cavity
     end do
     close(11)
     
-    do m = 1, 5000
+    do while(shouldContinue)
         shouldContinue = .false.
+        loopCount = loopCount + 1
         do i = 1, latticeSizeX
             do j = 1, latticeSizeY
                 lastLaticePoint = latticePoints(i, j)
@@ -66,7 +68,9 @@ program cavity
                         latticePoints(i, j-1)%phi - &
                         latticePoints(i, j)%omega) / 4.0
                 end if
-                !shouldContinue = shouldContinue.or.lastLaticePoint(i, j)%phi
+                shouldContinue = shouldContinue.or. &
+                    isUnconverged(latticePoints(i, j)%omega, lastLaticePoint%omega).or. &
+                    isUnconverged(latticePoints(i, j)%phi, lastLaticePoint%phi)
             end do
         end do
     end do
@@ -98,6 +102,8 @@ program cavity
             end if
         end do
     end do
+
+    print *, "loop count: ", loopCount
     
     open(10, file='cavity_phi.csv')
     do k = 1, latticeSizeY
