@@ -24,12 +24,6 @@ program cavity
     double precision, parameter :: convergenceThreshold = 0.00001
 
     latticePoints = latticePoint(phi=0.0, omega=0.0, u=0.0, v=0.0)
-
-    open(11, file='lattice.csv')
-    do k = 1, latticeSizeX
-        write(11, '(*(f0.0:" "))') latticePoints(:, i)%u
-    end do
-    close(11)
     
     do while(shouldContinue)
         shouldContinue = .false.
