@@ -1,6 +1,6 @@
 build:
-	gfortran cavity.f90 -o cavity.out
+	gfortran cavity.f90 -o outputs/cavity.out
 
 run:
-	./cavity.out && \
+	outputs/cavity.out && \
 	gnuplot cavity_graph.plt
