@@ -9,7 +9,7 @@ program cavity
     integer, parameter :: latticeSizeX = 50
     integer, parameter :: latticeSizeY = 50
 
-    double precision, parameter :: reynolds = 10
+    double precision, parameter :: reynolds = 50
 
     double precision :: h = 1.0 / latticeSizeX
     
@@ -99,19 +99,19 @@ program cavity
 
     print *, "loop count: ", loopCount
     
-    open(10, file='cavity_phi.csv')
+    open(10, file='outputs/cavity_phi.csv')
     do k = 1, latticeSizeY
         write(10, '(*(f0.10:" "))') latticePoints(:, k)%phi
     end do
     close(10)
 
-    open(11, file='cavity_omega.csv')
+    open(11, file='outputs/cavity_omega.csv')
     do l = 1, latticeSizeY
         write(11, '(*(f0.10:" "))') latticePoints(:, l)%omega
     end do
     close(11)
 
-    open(12, file='cavity_u.csv')
+    open(12, file='outputs/cavity_u.csv')
     do i = 1, latticeSizeX
         do j = 1, latticeSizeY
             write (12,'(3e12.4)') i*h, j*h, latticePoints(i, j)%u
@@ -119,7 +119,7 @@ program cavity
     end do
     close(12)
 
-    open(13, file='cavity_v.csv')
+    open(13, file='outputs/cavity_v.csv')
     do i = 1, latticeSizeX
         do j = 1, latticeSizeY
             write (13,'(3e12.4)') i*h, j*h, latticePoints(i, j)%v
@@ -127,7 +127,7 @@ program cavity
     end do
     close(13)
 
-    open(14, file='cavity_velocity.csv')
+    open(14, file='outputs/cavity_velocity.csv')
     do i = 1, latticeSizeX
         do j = 1, latticeSizeY
             write (14,'(4e12.4)') i*h, j*h, latticePoints(i, j)%u, latticePoints(i, j)%v
