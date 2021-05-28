@@ -48,7 +48,7 @@
         "*.synctex.gz"
     ],
     // 生成ファイルを "out" ディレクトリに吐き出す
-    "latex-workshop.latex.outDir": "out",
+    "latex-workshop.latex.outDir": "outputs/tex",
     // ビルドのレシピ
     "latex-workshop.latex.recipes": [
         {
