@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  28 MAY 2021 20:27
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  29 MAY 2021 13:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -233,9 +233,9 @@ LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
 (Font)              scaled to size 11.09619pt on input line 22.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 30.
+(Font)              scaled to size 6.47278pt on input line 27.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 30.
+(Font)              scaled to size 4.62341pt on input line 27.
 File: outputs/img/velocity_vector.png Graphic file (type bmp)
 <outputs/img/velocity_vector.png>
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
@@ -255,4 +255,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  68i,6n,74p,397b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on outputs/tex/interim_report.dvi (2 pages, 2204 bytes).
+Output written on outputs/tex/interim_report.dvi (2 pages, 2288 bytes).

@@ -130,9 +130,10 @@ program cavity
     close(13)
 
     open(14, file='outputs/data/velocity.csv')
-    do i = 1, latticeSizeX
-        do j = 1, latticeSizeY
-            write (14,'(4e12.4)') i*h, j*h, latticePoints(i, j)%u, latticePoints(i, j)%v
+    ! TODO 2を変数にする
+    do i = 1, latticeSizeX/2
+        do j = 1, latticeSizeY/2
+            write (14,'(4e12.4)') i*h*2, j*h*2, latticePoints(i*2, j*2)%u, latticePoints(i*2, j*2)%v
         end do
     end do
     close(14)
