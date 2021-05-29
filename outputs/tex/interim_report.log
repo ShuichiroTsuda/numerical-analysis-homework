@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  29 MAY 2021 13:23
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  29 MAY 2021 16:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -152,7 +152,14 @@ Package: ajmacros 2019/04/01 21:00 iNOUE Koich! <inoue@ma.ns.musashi-tech.ac.jp>
 \@tempcntd=\count275
 \@tempcnte=\count276
 \@tempcntf=\count277
-)) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/here/here.sty) (/usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count278
+\float@exts=\toks23
+\float@box=\box69
+\@float@everytoks=\toks24
+\@floatcapt=\box70
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
@@ -174,13 +181,13 @@ LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 18.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2021-03-18 L3 backend support: dvips
-\l__pdf_internal_box=\box69
-\g__pdf_backend_object_int=\count278
-\l__pdf_backend_content_box=\box70
-\l__pdf_backend_model_box=\box71
-\g__pdf_backend_annotation_int=\count279
-\g__pdf_backend_link_int=\count280
-\g__pdf_backend_link_sf_int=\count281
+\l__pdf_internal_box=\box71
+\g__pdf_backend_object_int=\count279
+\l__pdf_backend_content_box=\box72
+\l__pdf_backend_model_box=\box73
+\g__pdf_backend_annotation_int=\count280
+\g__pdf_backend_link_int=\count281
+\g__pdf_backend_link_sf_int=\count282
 )
 
 LaTeX Warning: Unused global option(s):
@@ -207,7 +214,7 @@ LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
-\c@lstlisting=\count282
+\c@lstlisting=\count283
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
 (Font)              scaled to size 15.9785pt on input line 19.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
@@ -236,23 +243,27 @@ LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
 (Font)              scaled to size 6.47278pt on input line 27.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
 (Font)              scaled to size 4.62341pt on input line 27.
-File: outputs/img/velocity_vector.png Graphic file (type bmp)
-<outputs/img/velocity_vector.png>
+File: outputs/img/velocity_vector_50.png Graphic file (type bmp)
+<outputs/img/velocity_vector_50.png>
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 42.
+(Font)              scaled to size 8.32214pt on input line 39.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 42.
-Package plautopatch Info: No additional packages loaded on input line 45.
+(Font)              scaled to size 8.32214pt on input line 39.
 [1
 
-] [2] (outputs/tex/interim_report.aux) ) 
+]
+File: outputs/img/stream_line_50.png Graphic file (type bmp)
+<outputs/img/stream_line_50.png>
+[2]
+Package plautopatch Info: No additional packages loaded on input line 60.
+[3] (outputs/tex/interim_report.aux) ) 
 Here is how much of TeX's memory you used:
- 4992 strings out of 479466
- 70147 string characters out of 5870548
- 371488 words of memory out of 5000000
- 22677 multiletter control sequences out of 15000+600000
+ 5067 strings out of 479466
+ 71363 string characters out of 5870548
+ 372874 words of memory out of 5000000
+ 22743 multiletter control sequences out of 15000+600000
  415055 words of font info for 85 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  68i,6n,74p,397b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on outputs/tex/interim_report.dvi (2 pages, 2288 bytes).
+Output written on outputs/tex/interim_report.dvi (3 pages, 3584 bytes).
