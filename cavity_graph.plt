@@ -10,8 +10,9 @@ set view 0,0
 set dgrid3d
 set contour base
 set nosurface
-set cntrparam cubicspline
-splot 'outputs/data/phi.csv' using 1:2:3 w l
+#set cntrparam cubicspline
+splot 'outputs/data/phi.csv' using 1:2:3 w l title "Streamline"
+
 
 
 pause -1
