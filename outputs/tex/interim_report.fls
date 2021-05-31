@@ -342,9 +342,6 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlminr-v
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlminr-h.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 OUTPUT outputs/tex/interim_report.dvi
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlgothr-v.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlgothr-h.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT ./outputs/img/stream_line_wo_param.png
 INPUT ./outputs/img/stream_line_wo_param.png
 INPUT outputs/img/stream_line_wo_param.png

@@ -21,7 +21,7 @@ program cavity
 
     logical :: shouldContinue = .true.
 
-    double precision, parameter :: convergenceThreshold = 0.00001
+    double precision, parameter :: convergenceThreshold = 0.00001 !収束条件
 
     latticePoints = latticePoint(phi=0.0, omega=0.0, u=0.0, v=0.0)
     

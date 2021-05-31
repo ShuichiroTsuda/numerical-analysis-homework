@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  31 MAY 2021 16:40
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  31 MAY 2021 20:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -304,35 +304,24 @@ LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
 [1
 
 ]
-LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 54.
-LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 54.
-LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 54.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 54.
-
-LaTeX Warning: Reference `fig:stream_line__wo_param' on page 2 undefined on input line 54.
-
 File: outputs/img/stream_line_wo_param.png Graphic file (type bmp)
 <outputs/img/stream_line_wo_param.png>
 File: outputs/img/stream_line.png Graphic file (type bmp)
 <outputs/img/stream_line.png>
 [2] [3]
-Package plautopatch Info: No additional packages loaded on input line 81.
-[4] (outputs/tex/interim_report.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+[]\OT1/cmr/m/n/10 Shigeharu TAKENO."gnuplot 34.13 Dgrid3d".2003/10/21.http://takeno.iee.niit.ac.jp/~foo/gp-
+ []
 
-LaTeX Warning: There were undefined references.
-
- ) 
+Package plautopatch Info: No additional packages loaded on input line 84.
+[4] (outputs/tex/interim_report.aux) ) 
 Here is how much of TeX's memory you used:
- 5911 strings out of 479466
- 86764 string characters out of 5870548
- 400451 words of memory out of 5000000
- 23571 multiletter control sequences out of 15000+600000
- 415565 words of font info for 88 fonts, out of 8000000 for 9000
+ 5906 strings out of 479466
+ 86679 string characters out of 5870548
+ 400463 words of memory out of 5000000
+ 23567 multiletter control sequences out of 15000+600000
+ 415055 words of font info for 85 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 68i,11n,74p,397b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,11n,74p,427b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on outputs/tex/interim_report.dvi (4 pages, 5180 bytes).
+Output written on outputs/tex/interim_report.dvi (4 pages, 5892 bytes).
