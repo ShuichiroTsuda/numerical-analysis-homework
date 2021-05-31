@@ -8,6 +8,8 @@ computational fluid dynamics homework
 - vscode
 - make
 
+![velocity vector](/outputs/img/velocity_vector.png) 
+
 ## commands
 ### build
 build cavity.f90
@@ -20,3 +22,4 @@ run cavity.f90 and gnuplot script
 ```
 make run
 ```
+
