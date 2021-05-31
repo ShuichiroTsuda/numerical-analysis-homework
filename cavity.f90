@@ -6,12 +6,12 @@ program cavity
         double precision u, v
     end type latticePoint
 
-    integer, parameter :: latticeSizeX = 100
-    integer, parameter :: latticeSizeY = 100
+    integer, parameter :: latticeSizeX = 50
+    integer, parameter :: latticeSizeY = 50
 
     double precision, parameter :: reynolds = 50
 
-    double precision :: h = 1.0 / latticeSizeX
+    double precision :: h = 1.0 / (latticeSizeX-1)
     
     type(latticePoint) :: latticePoints(latticeSizeX, latticeSizeY)
     type(latticePoint) :: lastLaticePoint !収束判断のための直前の値
@@ -102,7 +102,7 @@ program cavity
     open(10, file='outputs/data/phi.csv')
     do i = 1, latticeSizeX
         do j = 1, latticeSizeY
-            write (10,'(3e12.4)') i*h, j*h, latticePoints(i, j)%phi
+            write (10,'(3e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%phi
         end do
     end do
     close(10)
@@ -116,7 +116,7 @@ program cavity
     open(12, file='outputs/data/u.csv')
     do i = 1, latticeSizeX
         do j = 1, latticeSizeY
-            write (12,'(3e12.4)') i*h, j*h, latticePoints(i, j)%u
+            write (12,'(3e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%u
         end do
     end do
     close(12)
@@ -124,19 +124,27 @@ program cavity
     open(13, file='outputs/data/v.csv')
     do i = 1, latticeSizeX
         do j = 1, latticeSizeY
-            write (13,'(3e12.4)') i*h, j*h, latticePoints(i, j)%v
+            write (13,'(3e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%v
         end do
     end do
     close(13)
 
     open(14, file='outputs/data/velocity.csv')
-    ! TODO 2を変数にする
-    do i = 1, latticeSizeX/2
-        do j = 1, latticeSizeY/2
-            write (14,'(4e12.4)') i*h*2, j*h*2, latticePoints(i*2, j*2)%u, latticePoints(i*2, j*2)%v
+    do i = 1, latticeSizeX
+        do j = 1, latticeSizeY
+            write (14,'(4e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%u, latticePoints(i, j)%v
         end do
     end do
     close(14)
+
+    !open(14, file='outputs/data/velocity.csv')
+    ! TODO 2を変数にする
+    !do i = 1, latticeSizeX/2
+    !    do j = 1, latticeSizeY/2
+    !        write (14,'(4e12.4)') i*h*2, j*h*2, latticePoints(i*2, j*2)%u, latticePoints(i*2, j*2)%v
+    !    end do
+    !end do
+    !close(14)
 
     stop
     contains

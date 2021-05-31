@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  29 MAY 2021 16:18
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  31 MAY 2021 07:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -159,6 +159,57 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box69
 \@float@everytoks=\toks24
 \@floatcapt=\box70
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/mathtools/empheq.sty
+Package: empheq 2017/03/31 v2.15 Emphasizing equations
+(/usr/local/texlive/2021/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2021/03/18 v1.25 mathematical typesetting tools
+(/usr/local/texlive/2021/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count279
+\calc@Bcount=\count280
+\calc@Adimen=\dimen173
+\calc@Bdimen=\dimen174
+\calc@Askip=\skip53
+\calc@Bskip=\skip54
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count281
+\calc@Cskip=\skip55
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
+\g_MT_multlinerow_int=\count282
+\l_MT_multwidth_dim=\dimen175
+\origjot=\skip56
+\l_MT_shortvdotswithinadjustabove_dim=\dimen176
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen177
+\l_MT_above_intertext_sep=\dimen178
+\l_MT_below_intertext_sep=\dimen179
+\l_MT_above_shortintertext_sep=\dimen180
+\l_MT_below_shortintertext_sep=\dimen181
+\xmathstrut@box=\box71
+\xmathstrut@dim=\dimen182
+)
+\l_EQ_equationtype_int=\count283
+\l_EQ_alignmentmode_int=\count284
+\l_EQ_totalwidth_dim=\dimen183
+\l_EQ_displaywidth_dim=\dimen184
+\l_EQ_temp_linewidth_dim=\dimen185
+\l_EQ_linewidth_dim=\dimen186
+\EmphEqdelimitershortfall=\dimen187
+\EmphEqdelimiterfactor=\count285
+\g_EQ_toptag_height_dim=\dimen188
+\g_EQ_bottomtag_depth_dim=\dimen189
+\g_EQ_toprow_height_dim=\dimen190
+\g_EQ_bottomrow_depth_dim=\dimen191
+\g_EQ_widesttag_dim=\dimen192
+\EQ_mathdisplay_box=\box72
+\EQ_tag_box=\box73
+\g_EQ_temprow_int=\count286
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
@@ -172,8 +223,8 @@ Package graphics Info: Driver file: dvipdfmx.def on input line 105.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
 File: dvipdfmx.def 2021/03/18 v5.0j Graphics/color driver for dvipdfmx
 ))
-\Gin@req@height=\dimen173
-\Gin@req@width=\dimen174
+\Gin@req@height=\dimen193
+\Gin@req@width=\dimen194
 )
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 18.
@@ -181,13 +232,13 @@ LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 18.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2021-03-18 L3 backend support: dvips
-\l__pdf_internal_box=\box71
-\g__pdf_backend_object_int=\count279
-\l__pdf_backend_content_box=\box72
-\l__pdf_backend_model_box=\box73
-\g__pdf_backend_annotation_int=\count280
-\g__pdf_backend_link_int=\count281
-\g__pdf_backend_link_sf_int=\count282
+\l__pdf_internal_box=\box74
+\g__pdf_backend_object_int=\count287
+\l__pdf_backend_content_box=\box75
+\l__pdf_backend_model_box=\box76
+\g__pdf_backend_annotation_int=\count288
+\g__pdf_backend_link_int=\count289
+\g__pdf_backend_link_sf_int=\count290
 )
 
 LaTeX Warning: Unused global option(s):
@@ -214,7 +265,8 @@ LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
-\c@lstlisting=\count283
+\c@lstlisting=\count291
+\Hy@linkcounter=\count292
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
 (Font)              scaled to size 15.9785pt on input line 19.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
@@ -240,30 +292,30 @@ LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
 (Font)              scaled to size 11.09619pt on input line 22.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 27.
+(Font)              scaled to size 6.47278pt on input line 28.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 27.
+(Font)              scaled to size 4.62341pt on input line 28.
 File: outputs/img/velocity_vector_50.png Graphic file (type bmp)
 <outputs/img/velocity_vector_50.png>
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 39.
+(Font)              scaled to size 8.32214pt on input line 46.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 39.
+(Font)              scaled to size 8.32214pt on input line 46.
 [1
 
 ]
 File: outputs/img/stream_line_50.png Graphic file (type bmp)
 <outputs/img/stream_line_50.png>
 [2]
-Package plautopatch Info: No additional packages loaded on input line 60.
+Package plautopatch Info: No additional packages loaded on input line 72.
 [3] (outputs/tex/interim_report.aux) ) 
 Here is how much of TeX's memory you used:
- 5067 strings out of 479466
- 71363 string characters out of 5870548
- 372874 words of memory out of 5000000
- 22743 multiletter control sequences out of 15000+600000
+ 5899 strings out of 479466
+ 86514 string characters out of 5870548
+ 400443 words of memory out of 5000000
+ 23561 multiletter control sequences out of 15000+600000
  415055 words of font info for 85 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 68i,6n,74p,397b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,11n,74p,397b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on outputs/tex/interim_report.dvi (3 pages, 3584 bytes).
+Output written on outputs/tex/interim_report.dvi (3 pages, 4272 bytes).
