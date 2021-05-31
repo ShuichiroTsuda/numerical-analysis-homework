@@ -16,7 +16,7 @@ make build
 ```
 
 ### run
-run cavity.90 and gnuplot script
+run cavity.f90 and gnuplot script
 ```
 make run
 ```
