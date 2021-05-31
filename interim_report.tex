@@ -40,9 +40,10 @@ gfortranとgnuplotをインストールした.
   u = 0, v = 0 \quad 静止壁上
 \end{empheq}
 とした.
-図\ref{fig:velocity_vector}に今回得られた速度ベクトル図を示す.図\ref{fig:velocity_vector}より,$(0,1),(1,1)$間を結ぶ移動壁面付近で比較的速い流れが生じ,cavity内に１つの渦ができていることが確認できる.
+図\ref{fig:velocity_vector}に今回得られた速度ベクトル図を示す.図\ref{fig:velocity_vector}より,$(0,1),(1,1)$間を結ぶ線分に相当する移動壁面付近で比較的速い流れが生じ,cavity内に１つの渦ができていることが確認できる.
 \begin{figure}[H]
-  \includegraphics[width=15cm]{outputs/img/velocity_vector_50.png}
+  \centering
+  \includegraphics[width=15cm]{outputs/img/velocity_vector.png}
   \caption{速度ベクトル}
   \label{fig:velocity_vector}
 \end{figure}
@@ -50,11 +51,19 @@ gfortranとgnuplotをインストールした.
 \section{現在取り組んでいること}
 \subsection*{流線図の描画}
 流線は流れ関数$\phi = const$で表されることを用いて,流れ関数と渦度を求めるプログラムにより求めた流れ関数を用いて流線図の描画を行った.
-その結果を図\ref{fig:stream_line_50}に示す.図\ref{fig:stream_line_50}において,描画に用いる点の数が少なく,滑らかな流線が得られていないため,曲線による補完や格子点の数を増やすことを検討している.
+その結果を図\ref{fig:stream_line__wo_param}に示す.この時、gnuplotのdgrid3d機能を用いて描画を行ったが、格子点数と比較して描画に用いる点の数が少なく,滑らかな流線が得られなかった。この原因は、dgrid3dは非格子状データから格子状データへ変換を行うものであり、
+その際に複数の異なる点の重み付き平均をとっていることが原因と考えた。そのため、dgrid3dが生成する格子数を数値解析と同じにし、遠い点の影響が少なくなるように重みのパラメータを調整した。その結果は
 \begin{figure}[H]
-  \includegraphics[width=15cm]{outputs/img/stream_line_50.png}
+  \centering
+  \includegraphics[height=9.5cm]{outputs/img/stream_line_wo_param.png}
   \caption{流線}
-  \label{fig:stream_line_50}
+  \label{fig:stream_line_wo_param}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=9.5cm]{outputs/img/stream_line.png}
+  \caption{流線(dgrid3dパラメータ調整あり)}
+  \label{fig:stream_line}
 \end{figure}
 \section{これから取り組むこと}
 \subsection{等圧線図の描画}
