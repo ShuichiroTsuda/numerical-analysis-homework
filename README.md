@@ -1,14 +1,13 @@
 # numerical-analysis-homework
 computational fluid dynamics homework
 
+![velocity vector](/outputs/img/velocity_vector.png) 
 ## requirements
 - gfortran
 - gnuplot
 - tex
 - vscode
 - make
-
-![velocity vector](/outputs/img/velocity_vector.png) 
 
 ## commands
 ### build
