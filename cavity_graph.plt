@@ -10,6 +10,6 @@ set output 'outputs/img/stream_line.png'
 set contour base
 set view 0,0
 set noclabel
-splot 'cavity_wall.csv' with lines title "Wall" nocontour ,'outputs/data/phi.csv' w l title "Streamline" nosurface
+splot 'cavity_wall.csv' with lines title "Wall" nocontour ,'outputs/data/psi.csv' w l title "Streamline" nosurface
 
 pause -1
