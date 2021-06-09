@@ -9,7 +9,7 @@ program cavity
     integer, parameter :: latticeSizeX = 50
     integer, parameter :: latticeSizeY = 50
 
-    double precision, parameter :: reynolds = 50
+    double precision, parameter :: reynolds = 200
 
     double precision :: h = 1.0 / (latticeSizeX-1)
     
@@ -104,6 +104,7 @@ program cavity
         do j = 1, latticeSizeY
             write (10,'(3e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%phi
         end do
+        write(10,'(/)',advance='no')
     end do
     close(10)
 
