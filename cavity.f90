@@ -4,12 +4,13 @@ program cavity
     type :: latticePoint
         double precision psi, omega
         double precision u, v
+        double precision p
     end type latticePoint
 
     integer, parameter :: latticeSizeX = 50
     integer, parameter :: latticeSizeY = 50
 
-    double precision, parameter :: reynolds = 200
+    double precision, parameter :: reynolds = 100
 
     double precision :: h = 1.0 / (latticeSizeX-1)
     
@@ -21,9 +22,9 @@ program cavity
 
     logical :: shouldContinue = .true.
 
-    double precision, parameter :: convergenceThreshold = 0.00001 !収束条件
+    double precision, parameter :: convergenceThreshold = 0.0001 !収束条件
 
-    latticePoints = latticePoint(psi=0.0, omega=0.0, u=0.0, v=0.0)
+    latticePoints = latticePoint(psi=0.0, omega=0.0, u=0.0, v=0.0, p=0.0)
     
     do while(shouldContinue)
         shouldContinue = .false.
@@ -97,6 +98,44 @@ program cavity
         end do
     end do
 
+    shouldContinue = .true.
+    do while(shouldContinue)
+        shouldContinue = .false.
+        !loopCount = loopCount + 1
+        do i = 1, latticeSizeX
+            do j = 1, latticeSizeY
+                lastLaticePoint = latticePoints(i, j)
+                if (i == 1) then 
+                    !latticePoints(i, j)%p = latticePoints(i+1, j)%p + 2 * latticePoints(i+1, j)%u/reynolds*h
+                    latticePoints(i, j)%p = latticePoints(i+1, j)%p
+                else if (i == latticeSizeX) then
+                    !latticePoints(i, j)%p = latticePoints(i-1, j)%p - 2 * latticePoints(i-1, j)%u/reynolds*h
+                    latticePoints(i, j)%p = latticePoints(i-1, j)%p
+                else if (j == 1) then
+                    !latticePoints(i, j)%p = latticePoints(i, j+1)%p + 2 * latticePoints(i, j+1)%v/reynolds*h
+                    latticePoints(i, j)%p = latticePoints(i, j+1)%p
+                else if (j == latticeSizeY) then 
+                    !latticePoints(i, j)%p = latticePoints(i, j-1)%p - 2 * latticePoints(i, j-1)%v/reynolds*h
+                    latticePoints(i, j)%p = latticePoints(i, j-1)%p
+                else
+                    latticePoints(i, j)%p = &
+                        (latticePoints(i-1, j)%p + &
+                        latticePoints(i+1, j)%p + &
+                        latticePoints(i, j+1)%p + &
+                        latticePoints(i, j-1)%p) / 4.0 - &
+                        h ** 2 * & 
+                        ((latticePoints(i-1,j)%psi-2*latticePoints(i,j)%psi+ &
+                        latticePoints(i+1,j)%psi)*(latticePoints(i,j-1)%psi- & 
+                        2*latticePoints(i,j)%psi+latticePoints(i,j+1)%psi) - & 
+                        (latticePoints(i+1,j+1)%psi-latticePoints(i+1,j-1)%psi- & 
+                        latticePoints(i-1,j+1)%psi+latticePoints(i-1,j-1)%psi)/8)
+                end if
+                shouldContinue = shouldContinue.or. &
+                    isUnconverged(latticePoints(i, j)%p, lastLaticePoint%p)
+            end do
+        end do
+    end do
+
     print *, "loop count: ", loopCount
     
     open(10, file='outputs/data/psi.csv')
@@ -138,14 +177,14 @@ program cavity
     end do
     close(14)
 
-    !open(14, file='outputs/data/velocity.csv')
-    ! TODO 2を変数にする
-    !do i = 1, latticeSizeX/2
-    !    do j = 1, latticeSizeY/2
-    !        write (14,'(4e12.4)') i*h*2, j*h*2, latticePoints(i*2, j*2)%u, latticePoints(i*2, j*2)%v
-    !    end do
-    !end do
-    !close(14)
+    open(15, file='outputs/data/p.csv')
+    do i = 1, latticeSizeX
+        do j = 1, latticeSizeY
+            write (15,'(3e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%p
+        end do
+        write(15,'(/)',advance='no')
+    end do
+    close(15)
 
     stop
     contains

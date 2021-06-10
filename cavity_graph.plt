@@ -12,4 +12,18 @@ set view 0,0
 set noclabel
 splot 'cavity_wall.csv' with lines title "Wall" nocontour ,'outputs/data/psi.csv' w l title "Streamline" nosurface
 
+set term pngcairo size 640,480 font ",12"
+set output 'outputs/img/p.png'
+set contour base
+set view 0,0
+set noclabel
+splot 'cavity_wall.csv' with lines title "Wall" nocontour ,'outputs/data/p.csv' w l title "Streamline" nosurface
+
+
+set term pngcairo size 640,480 font ",12"
+set output 'outputs/img/p1.png'
+set contour base
+set view 50,100
+splot 'outputs/data/p.csv' w l title "Streamline"
+
 pause -1
