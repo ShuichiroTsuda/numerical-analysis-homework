@@ -1,0 +1,84 @@
+\RequirePackage{plautopatch}
+\documentclass[upLaTeX,a4paper]{jsarticle}
+\usepackage{listings,jlisting,amsmath,otf,here,empheq}
+\usepackage[dvipdfmx]{graphicx}
+
+\lstset{
+breaklines = true,
+numbers = left,
+frame = tbrl,
+tabsize = 4,
+captionpos = t
+}
+
+\title{流体の数値計算プログラムの作成 レポート}
+\author{B4 津田修一朗}
+\date{2021/6/15}
+
+\begin{document}
+\maketitle
+
+\section{環境構築}
+gfortranとgnuplotをインストールした.
+エディタはVisual Studio Codeを使用している.
+
+\section{数値計算の手順、手法}
+\subsection{流れ関数と渦度を求めるプログラムの実装}
+流れ関数-渦度法により,cavity内の流れを解いた.基礎方程式や境界条件については\cite{1}に従った.レイノルズ数$Re = 50$, 格子点$50\times 50$とした.
+
+\subsection{速度ベクトル図の描画}
+流れ関数と渦度を求めるプログラムの実装により得られた流れ関数$\varPsi$より,速度場$(u, v)$を
+
+\begin{equation}
+  u = \frac{\partial \varPsi}{\partial y}, v = - \frac{\partial \varPsi}{\partial x},
+\end{equation}
+を用いて求めた.
+ただし,u, vの境界条件は
+\begin{empheq}{alignat=2}
+  u = -1, v = 0 \quad 移動壁上 \\
+  u = 0, v = 0 \quad 静止壁上
+\end{empheq}
+とした.
+図\ref{fig:velocity_vector}に今回得られた速度ベクトル図を示す.図\ref{fig:velocity_vector}より,$(0,1),(1,1)$間を結ぶ線分に相当する移動壁面付近で比較的速い流れが生じ,cavity内に１つの渦ができていることが確認できる.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=15cm]{outputs/img/velocity_vector.png}
+  \caption{速度ベクトル}
+  \label{fig:velocity_vector}
+\end{figure}
+
+\subsection{流線図の描画}
+流線は流れ関数$\varPsi = const$で表されることを用いて,流れ関数と渦度を求めるプログラムにより求めた流れ関数を用いて流線図を描画した.
+その結果を図\ref{fig:stream_line}に示す.
+中間報告においては, gnuplotの格子状データを生成するdgrid3d機能を用いていたため、比較的離れた格子点の情報が入ってしまっていた。
+しかし、その後データを格納しているcsvファイルの形式を修正し、dgrid3dを使わず、数値解析によって得られた値をそのまま格子状データとして描画する方法を用いたので、最近接点のみの情報で
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=9.5cm]{outputs/img/stream_line.png}
+  \caption{流線}
+  \label{fig:stream_line}
+\end{figure}
+\subsection{等圧線図の描画}
+圧力のポアソン方程式
+\begin{equation}
+  \frac{\partial ^2 p}{\partial x ^2} + \frac{\partial ^2 p}{\partial y ^2} = 2 \left[ \left(\frac{\partial ^2 \varPsi}{\partial x ^2}\right) \left(\frac{\partial ^2 \varPsi}{\partial y ^2}\right) - \left( \frac{\partial ^2 \varPsi}{\partial x \partial y}  \right) ^2 \right]
+\end{equation}
+により圧力分布を求め,等圧線図を描画した。
+差分方程式は
+\begin{equation}
+  \begin{split}
+    p_{i,j}^{n+1} & =\frac{(p_{i+1,j}^{n}+p_{i-1,j}^{n})\Delta y^2+(p_{i,j+1}^{n}+p_{i,j-1}^{n})\Delta x^2-b_{i,j}^{n}\Delta x^2\Delta y^2}{2(\Delta x^2+\Delta y^2)}\\
+    b_{i,j}^{n} & =  -\frac{u_{i+1,j}^{n}-u_{i-1,j}^{n}}{2\Delta x}\frac{u_{i+1,j}^{n}-u_{i-1,j}^{n}}{2\Delta x}-2\frac{u_{i,j+1}^{n}-u_{i,j-1}^{n}}{2\Delta y}\frac{v_{i+1,j}^{n}-v_{i-1,j}^{n}}{2\Delta x} -\frac{v_{i,j+1}^{n}-v_{i,j-1}^{n}}{2\Delta y}\frac{v_{i,j+1}^{n}-v_{i,j-1}^{n}}{2\Delta y} \\
+  \end{split}
+\end{equation}
+境界条件は
+\section{数値計算の結果}
+
+
+\begin{thebibliography}{9}
+  %	\bibitem{1} \url{http://www.hal.t.u-tokyo.ac.jp/lab/ja/index_1.xhtml}
+  %    \bibitem{2}Olga Russakovsky*, Jia Deng*, Hao Su, Jonathan Krause, Sanjeev Satheesh, Sean Ma, Zhiheng Huang, Andrej Karpathy, Aditya Khosla, Michael Bernstein, Alexander C. Berg and Li Fei-Fei. (* = equal contribution) ImageNet Large Scale Visual Recognition Challenge. IJCV, 2015.
+  \bibitem{1} 研究室資料.流体の数値計算（川口光年先生1976年頃）.pdf
+\end{thebibliography}
+\end{document}

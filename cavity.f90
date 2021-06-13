@@ -10,9 +10,10 @@ program cavity
     integer, parameter :: latticeSizeX = 50
     integer, parameter :: latticeSizeY = 50
 
-    double precision, parameter :: reynolds = 100
+    double precision, parameter :: reynolds = 50
 
     double precision :: h = 1.0 / (latticeSizeX-1)
+    double precision :: b = 0.0
     
     type(latticePoint) :: latticePoints(latticeSizeX, latticeSizeY)
     type(latticePoint) :: lastLaticePoint !収束判断のための直前の値

@@ -17,6 +17,7 @@ set output 'outputs/img/p.png'
 set contour base
 set view 0,0
 set noclabel
+set cntrparam levels 30
 splot 'cavity_wall.csv' with lines title "Wall" nocontour ,'outputs/data/p.csv' w l title "Streamline" nosurface
 
 
