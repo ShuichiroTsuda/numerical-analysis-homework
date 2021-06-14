@@ -140,14 +140,19 @@ program cavity
 !                        latticePoints(i-1, j+1)%psi + latticePoints(i-1, j-1)%psi)/4) &
  !                   )
 
-                    b = ( &
-                        2 * ((latticePoints(i+1,j)%u-latticePoints(i-1,j)%u) * &
-                        (latticePoints(i, j+1)%v - latticePoints(i, j-1)%v) -  &
-                        (latticePoints(i,j+1)%u-latticePoints(i,j-1)%u) * &
-                        (latticePoints(i+1, j)%v - latticePoints(i-1, j)%v)) + &
-                        (latticePoints(i+1,j)%D+latticePoints(i-1,j)%D-2*latticePoints(i,j)%D + &
-                        latticePoints(i,j+1)%D+latticePoints(i,j-1)%D-2*latticePoints(i,j)%D) / reynolds &
-                        ) / 4 / h**2
+!                    b = 2 * ( &
+!                        (latticePoints(i+1,j)%u-latticePoints(i-1,j)%u) * &
+!                        (latticePoints(i, j+1)%v - latticePoints(i, j-1)%v) -  &
+!                        (latticePoints(i,j+1)%u-latticePoints(i,j-1)%u) * &
+!                        (latticePoints(i+1, j)%v - latticePoints(i-1, j)%v) + &
+!                        (latticePoints(i+1,j)%D+latticePoints(i-1,j)%D-2*latticePoints(i,j)%D + &
+!                        latticePoints(i,j+1)%D+latticePoints(i,j-1)%D-2*latticePoints(i,j)%D) / reynolds &
+!                        ) / 4 / h**2
+                    b = - ((latticePoints(i+1,j)%u-latticePoints(i-1,j)%u)**2 &
+                         + 2 * (latticePoints(i,j+1)%u-latticePoints(i,j-1)%u) & 
+                         * (latticePoints(i+1,j)%v-latticePoints(i-1,j)%v) + &
+                         (latticePoints(i,j+1)%v-latticePoints(i,j-1)%v) ** 2 &
+                         ) / (4 * h**2)
                     latticePoints(i, j)%p = &
                         (latticePoints(i-1, j)%p + &
                         latticePoints(i+1, j)%p + &
