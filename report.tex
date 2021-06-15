@@ -69,7 +69,7 @@ gfortranとgnuplotをインストールした.
 \begin{equation}
   \begin{split}
     p_{i,j}^{n+1} & =\frac{(p_{i+1,j}^{n}+p_{i-1,j}^{n})+(p_{i,j+1}^{n}+p_{i,j-1}^{n})-b_{i,j}^{n}h^2}{4}\\
-    b_{i,j}^{n} & = 2\left[ \frac{\varPsi_{i+1,j}+\varPsi_{i-1,j}- 2\varPsi_{i,j}}{h^2} \frac{\varPsi_{i,j+1}+\varPsi_{i,j-1}-2\varPsi_{i,j}}{h^2} - \frac{\varPsi_{i+1,j+1}-\varPsi_{i+1,j-1}-\varPsi_{i-1,j+1}+\varPsi_{i-1,j-1}}{4h^2}  \right]
+    b_{i,j}^{n} & = 2\left[ \frac{\varPsi_{i+1,j}+\varPsi_{i-1,j}- 2\varPsi_{i,j}}{h^2} \frac{\varPsi_{i,j+1}+\varPsi_{i,j-1}-2\varPsi_{i,j}}{h^2} - \left(\frac{\varPsi_{i+1,j+1}-\varPsi_{i+1,j-1}-\varPsi_{i-1,j+1}+\varPsi_{i-1,j-1}}{4h^2}\right)^2  \right]
   \end{split}
 \end{equation}
 境界条件は

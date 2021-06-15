@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  15 JUN 2021 10:31
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  15 JUN 2021 20:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -307,6 +307,10 @@ LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
 File: outputs/img/stream_line.png Graphic file (type bmp)
 <outputs/img/stream_line.png>
 [2]
+Overfull \hbox (10.92285pt too wide) detected at line 74
+[]
+ []
+
 Package plautopatch Info: No additional packages loaded on input line 84.
 [3] (outputs/tex/report.aux) ) 
 Here is how much of TeX's memory you used:
@@ -316,6 +320,6 @@ Here is how much of TeX's memory you used:
  23561 multiletter control sequences out of 15000+600000
  415055 words of font info for 85 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 68i,17n,74p,389b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,18n,74p,389b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on outputs/tex/report.dvi (3 pages, 6080 bytes).
+Output written on outputs/tex/report.dvi (3 pages, 6140 bytes).
