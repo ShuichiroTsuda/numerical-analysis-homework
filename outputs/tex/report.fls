@@ -334,16 +334,44 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlminr-h.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlminr-h.tfm
-INPUT ./outputs/img/velocity_vector.png
-INPUT ./outputs/img/velocity_vector.png
-INPUT outputs/img/velocity_vector.png
-INPUT extractbb -B cropbox -O outputs/img/velocity_vector.png
+OUTPUT outputs/tex/report.dvi
+INPUT ./outputs/img/velocity_vector_re50.png
+INPUT ./outputs/img/velocity_vector_re50.png
+INPUT outputs/img/velocity_vector_re50.png
+INPUT extractbb -B cropbox -O outputs/img/velocity_vector_re50.png
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlminr-v.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlminr-h.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
-OUTPUT outputs/tex/report.dvi
-INPUT ./outputs/img/stream_line.png
-INPUT ./outputs/img/stream_line.png
-INPUT outputs/img/stream_line.png
-INPUT extractbb -B cropbox -O outputs/img/stream_line.png
+INPUT ./outputs/img/velocity_vector_re200.png
+INPUT ./outputs/img/velocity_vector_re200.png
+INPUT outputs/img/velocity_vector_re200.png
+INPUT extractbb -B cropbox -O outputs/img/velocity_vector_re200.png
+INPUT ./outputs/img/velocity_vector_re500.png
+INPUT ./outputs/img/velocity_vector_re500.png
+INPUT outputs/img/velocity_vector_re500.png
+INPUT extractbb -B cropbox -O outputs/img/velocity_vector_re500.png
+INPUT ./outputs/img/stream_line_re50.png
+INPUT ./outputs/img/stream_line_re50.png
+INPUT outputs/img/stream_line_re50.png
+INPUT extractbb -B cropbox -O outputs/img/stream_line_re50.png
+INPUT ./outputs/img/stream_line_re200.png
+INPUT ./outputs/img/stream_line_re200.png
+INPUT outputs/img/stream_line_re200.png
+INPUT extractbb -B cropbox -O outputs/img/stream_line_re200.png
+INPUT ./outputs/img/stream_line_re500.png
+INPUT ./outputs/img/stream_line_re500.png
+INPUT outputs/img/stream_line_re500.png
+INPUT extractbb -B cropbox -O outputs/img/stream_line_re500.png
+INPUT ./outputs/img/p_re50.png
+INPUT ./outputs/img/p_re50.png
+INPUT outputs/img/p_re50.png
+INPUT extractbb -B cropbox -O outputs/img/p_re50.png
+INPUT ./outputs/img/p_re200.png
+INPUT ./outputs/img/p_re200.png
+INPUT outputs/img/p_re200.png
+INPUT extractbb -B cropbox -O outputs/img/p_re200.png
+INPUT ./outputs/img/p_re500.png
+INPUT ./outputs/img/p_re500.png
+INPUT outputs/img/p_re500.png
+INPUT extractbb -B cropbox -O outputs/img/p_re500.png
 INPUT outputs/tex/report.aux

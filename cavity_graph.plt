@@ -16,10 +16,10 @@ set term pngcairo size 1280, 960 font ",24"
 set output 'outputs/img/p.png'
 set contour base
 set view 0,0
+set pm3d
 set palette rgbformula 22,13,-31
-set noclabel
 set cntrparam levels 10
-splot 'cavity_wall.csv' with lines nocontour ,'outputs/data/p.csv' w pm3d lc palette
+splot 'cavity_wall.csv' with lines linewidth 2 title "Wall" nocontour ,'outputs/data/p.csv' w l linewidth 2 title "Pressure Contour" nosurface
 
 
 set term pngcairo size 1280, 960 font ",24"
