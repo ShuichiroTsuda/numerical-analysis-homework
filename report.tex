@@ -18,13 +18,17 @@ captionpos = t
 \begin{document}
 \maketitle
 
-\section{環境構築}
-gfortranとgnuplotをインストールした.
-エディタはVisual Studio Codeを使用している.
+\section{環境}
+プログラム実行環境: gfortran
+
+グラフ描画ソフト: gnuplot
+
+エディタ: Visual Studio Code
 
 \section{数値計算の手順、手法}
 \subsection{流れ関数と渦度を求めるプログラムの実装}
-流れ関数-渦度法により,cavity内の流れを解いた.基礎方程式や境界条件については\cite{1}に従った.レイノルズ数$Re = 50$, 格子点$50\times 50$とした.
+流れ関数-渦度法により,cavity内の流れを解いた.基礎方程式や境界条件については\cite{1}に従った.数値計算は、(i)レイノルズ数$Re = 50$, 格子点$50\times 50$, (ii)レイノルズ数$Re = 200$, 格子点$100\times 100$,
+(iii) レイノルズ数$Re = 500$, 格子点$150\times 150$の3つの条件で行った.
 
 \subsection{速度ベクトル図の描画}
 流れ関数と渦度を求めるプログラムの実装により得られた流れ関数$\varPsi$より,速度場$(u, v)$を
@@ -73,6 +77,11 @@ gfortranとgnuplotをインストールした.
   \end{split}
 \end{equation}
 境界条件は
+\begin{empheq}{alignat=2}
+  \frac{\partial p}{\partial x} = 0 \quad (x=0, 1) \\
+  \frac{\partial p}{\partial x} = 0 \quad (y=0,1)
+\end{empheq}
+とした。
 \section{数値計算の結果}
 
 

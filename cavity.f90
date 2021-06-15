@@ -7,10 +7,10 @@ program cavity
         double precision p
     end type latticePoint
 
-    integer, parameter :: latticeSizeX = 50
-    integer, parameter :: latticeSizeY = 50
+    integer, parameter :: latticeSizeX = 100
+    integer, parameter :: latticeSizeY = 100
 
-    double precision, parameter :: reynolds = 50
+    double precision, parameter :: reynolds = 200
 
     double precision :: h = 1.0 / (latticeSizeX-1)
     double precision :: b = 0.0
@@ -130,7 +130,7 @@ program cavity
                     latticePoints(i, j)%p = latticePoints(i-1, j)%p
                 else if (j == 1) then
                     !latticePoints(i, j)%p = latticePoints(i, j+1)%p + 2 * latticePoints(i, j+1)%v/reynolds*h
-                    latticePoints(i, j)%p = latticePoints(i, j+1)%p
+                    latticePoints(i, j)%p = 0
                 else if (j == latticeSizeY) then 
                     !latticePoints(i, j)%p = latticePoints(i, j-1)%p - 2 * latticePoints(i, j-1)%v/reynolds*h
                     latticePoints(i, j)%p = latticePoints(i, j-1)%p
@@ -189,7 +189,9 @@ program cavity
     open(14, file='outputs/data/velocity.csv')
     do i = 1, latticeSizeX
         do j = 1, latticeSizeY
-            write (14,'(4e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%u, latticePoints(i, j)%v
+            if (mod(i,2) == 0 .and. mod(j,2) == 0 ) then
+                write (14,'(4e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%u, latticePoints(i, j)%v
+            end if
         end do
     end do
     close(14)
