@@ -116,7 +116,7 @@ program cavity
 
     loopCount = 0
     shouldContinue = .true.
-    do k = 1, 10000
+    do k = 1, 30000
         shouldContinue = .false.
         loopCount = loopCount + 1
         do i = 1, latticeSizeX
@@ -135,12 +135,12 @@ program cavity
                     !latticePoints(i, j)%p = latticePoints(i, j-1)%p - 2 * latticePoints(i, j-1)%v/reynolds*h
                     latticePoints(i, j)%p = latticePoints(i, j-1)%p
                 else
-                    b = 2 / h**2 *( &
+                    b = 2 *( &
                         (latticePoints(i+1, j)%psi + latticePoints(i-1, j)%psi - 2 * latticePoints(i, j)%psi) * &
                         (latticePoints(i, j+1)%psi + latticePoints(i, j-1)%psi - 2 * latticePoints(i, j)%psi) - &
                         ((latticePoints(i+1, j+1)%psi - latticePoints(i+1, j-1)%psi - &
-                        latticePoints(i-1, j+1)%psi + latticePoints(i-1, j-1)%psi)/4) ** 2.0 &
-                   )
+                        latticePoints(i-1, j+1)%psi + latticePoints(i-1, j-1)%psi) /4) ** 2.0 &
+                   ) / h**2
                     latticePoints(i, j)%p = &
                         (latticePoints(i-1, j)%p + &
                         latticePoints(i+1, j)%p + &
@@ -203,14 +203,14 @@ program cavity
     end do
     close(15)
 
-    open(15, file='outputs/data/D.csv')
+    open(16, file='outputs/data/D.csv')
     do i = 1, latticeSizeX
         do j = 1, latticeSizeY
-            write (15,'(3e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%D
+            write (16,'(3e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%D
         end do
-        write(15,'(/)',advance='no')
+        write(16,'(/)',advance='no')
     end do
-    close(15)
+    close(16)
 
     stop
     contains
