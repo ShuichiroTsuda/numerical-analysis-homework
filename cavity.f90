@@ -10,7 +10,7 @@ program cavity
     integer, parameter :: latticeSizeX = 50
     integer, parameter :: latticeSizeY = 50
 
-    double precision, parameter :: reynolds = 200
+    double precision, parameter :: reynolds = 50
 
     double precision :: h = 1.0 / (latticeSizeX-1)
     double precision :: b = 0.0
@@ -130,7 +130,7 @@ program cavity
                     latticePoints(i, j)%p = latticePoints(i-1, j)%p
                 else if (j == 1) then
                     !latticePoints(i, j)%p = latticePoints(i, j+1)%p + 2 * latticePoints(i, j+1)%v/reynolds*h
-                    latticePoints(i, j)%p = 0
+                    latticePoints(i, j)%p = latticePoints(i, j+1)%p
                 else if (j == latticeSizeY) then 
                     !latticePoints(i, j)%p = latticePoints(i, j-1)%p - 2 * latticePoints(i, j-1)%v/reynolds*h
                     latticePoints(i, j)%p = latticePoints(i, j-1)%p
@@ -139,7 +139,7 @@ program cavity
                         (latticePoints(i+1, j)%psi + latticePoints(i-1, j)%psi - 2 * latticePoints(i, j)%psi) * &
                         (latticePoints(i, j+1)%psi + latticePoints(i, j-1)%psi - 2 * latticePoints(i, j)%psi) - &
                         ((latticePoints(i+1, j+1)%psi - latticePoints(i+1, j-1)%psi - &
-                        latticePoints(i-1, j+1)%psi + latticePoints(i-1, j-1)%psi)/4) ** 2 &
+                        latticePoints(i-1, j+1)%psi + latticePoints(i-1, j-1)%psi)/4) ** 2.0 &
                    )
                     latticePoints(i, j)%p = &
                         (latticePoints(i-1, j)%p + &
