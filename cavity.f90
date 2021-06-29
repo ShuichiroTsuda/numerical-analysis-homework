@@ -10,7 +10,7 @@ program cavity
     integer, parameter :: latticeSizeX = 51
     integer, parameter :: latticeSizeY = 51
 
-    double precision, parameter :: reynolds = 120
+    double precision, parameter :: reynolds = 100
 
     double precision :: h = 1.0 / (latticeSizeX-1)
     double precision :: b = 0.0
@@ -28,6 +28,8 @@ program cavity
     latticePoints = latticePoint(psi=0.0, omega=0.0, u=0.0, v=0.0, D=0.0, p=0.0)
     lastLatticePoints = latticePoint(psi=0.0, omega=0.0, u=0.0, v=0.0, D=0.0, p=0.0)
 
+
+    !lastLatticePoints使わなくていいですというか使うと収束が遅くなります
     do while(shouldContinue)
         shouldContinue = .false.
         loopCount = loopCount + 1
@@ -115,44 +117,35 @@ program cavity
     print *, "loop count: ", loopCount
 
     loopCount = 0
-    shouldContinue = .true.
-    do k = 1, 10000
-        shouldContinue = .false.
-        loopCount = loopCount + 1
-        do i = 1, latticeSizeX
-            do j = 1, latticeSizeY
-                lastLatticePoints = latticePoints
-                if (i==1 .and. j==1 .or. i==1 .and. j==2.or. i==2 .and. j==1.or. i==2 .and. j==2) then 
-                    !latticePoints(i, j)%p = latticePoints(i+1, j)%p + 2 * latticePoints(i+1, j)%u/reynolds*h
-                    latticePoints(i, j)%p = 0
-                else if (i == 1) then 
-                    !latticePoints(i, j)%p = latticePoints(i+1, j)%p + 2 * latticePoints(i+1, j)%u/reynolds*h
-                    latticePoints(i, j)%p = latticePoints(i+1, j)%p
-                else if (i == latticeSizeX) then
-                    !latticePoints(i, j)%p = latticePoints(i-1, j)%p - 2 * latticePoints(i-1, j)%u/reynolds*h
-                    latticePoints(i, j)%p = latticePoints(i-1, j)%p
-                else if (j == 1) then
-                    !latticePoints(i, j)%p = latticePoints(i, j+1)%p + 2 * latticePoints(i, j+1)%v/reynolds*h
-                    latticePoints(i, j)%p = latticePoints(i, j+1)%p
-                else if (j == latticeSizeY) then 
-                    !latticePoints(i, j)%p = latticePoints(i, j-1)%p - 2 * latticePoints(i, j-1)%v/reynolds*h
-                    latticePoints(i, j)%p = latticePoints(i, j-1)%p
-                else
-                    b = 2 * ( &
-                        (latticePoints(i+1,j)%psi + latticePoints(i-1, j)%psi - 2 * latticePoints(i, j)%psi)/h**2 &
-                        * (latticePoints(i,j+1)%psi + latticePoints(i, j-1)%psi - 2 * latticePoints(i, j)%psi)/h**2  & 
-                        - ((latticePoints(i+1,j+1)%psi-latticePoints(i+1,j-1)%psi - &
-                        latticePoints(i-1,j+1)%psi + latticePoints(i-1,j-1)%psi)/(4*h**2))**2)
-                    latticePoints(i, j)%p = &
-                        (latticePoints(i-1, j)%p + &
-                        latticePoints(i+1, j)%p + &
-                        latticePoints(i, j+1)%p + &
-                        latticePoints(i, j-1)%p - b * h**2 ) / 4.0
-                end if
-                shouldContinue = shouldContinue.or. &
-                    isUnconverged(latticePoints(i, j)%p, lastLatticePoints(i, j)%p)
+    latticePoints(1, 1)%p = 0
+    latticePoints(1, 2)%p = 0
+    latticePoints(2, 1)%p = 0
+
+    do j = 2, latticeSizeY-1
+        latticePoints(2, j)%p = latticePoints(2,j-1)%p + &
+        (latticePoints(3, j)%v +latticePoints(2, j+1)%v + &
+        latticePoints(1, j)%v+latticePoints(2, j-1)%v - 4 * latticePoints(2, j)%v) / (reynolds * h) - &
+        latticePoints(2,j)%u * (latticePoints(3, j)%v-latticePoints(1,j)%v) /2 - &
+        latticePoints(2,j)%v * (latticePoints(2, j+1)%v-latticePoints(2,j-1)%v) /2
+    end do
+
+        do j = 2, latticeSizeY-1
+            do i = 3, latticeSizeX-1
+                    latticePoints(i, j)%p = latticePoints(i-1,j)%p + &
+                    (latticePoints(i+1, j)%u +latticePoints(i, j+1)%u + &
+                    latticePoints(i-1, j)%u+latticePoints(i, j-1)%u - 4 * latticePoints(i, j)%u) / (reynolds * h) - &
+                    latticePoints(i,j)%u * (latticePoints(i+1, j)%u-latticePoints(i-1,j)%u) /2 - &
+                    latticePoints(i,j)%v * (latticePoints(i, j+1)%u-latticePoints(i,j-1)%u) /2
             end do
         end do
+    
+    do j = 1, latticeSizeY
+        latticePoints(1, j)%p = latticePoints(2, j)%p
+        latticePoints(latticeSizeX, j)%p = latticePoints(latticeSizeX-1, j)%p
+    end do
+    do i = 1, latticeSizeY
+        latticePoints(i, 1)%p = latticePoints(i, 2)%p
+        latticePoints(i, latticeSizeY)%p = latticePoints(i, latticeSizeY-1)%p
     end do
 
     print *, "loop count: ", loopCount
