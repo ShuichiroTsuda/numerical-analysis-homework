@@ -7,66 +7,67 @@ program cavity
         double precision p
     end type latticePoint
 
-    integer, parameter :: latticeSizeX = 150
-    integer, parameter :: latticeSizeY = 150
+    integer, parameter :: latticeSizeX = 51
+    integer, parameter :: latticeSizeY = 51
 
-    double precision, parameter :: reynolds = 500
+    double precision, parameter :: reynolds = 120
 
     double precision :: h = 1.0 / (latticeSizeX-1)
     double precision :: b = 0.0
     
     type(latticePoint) :: latticePoints(latticeSizeX, latticeSizeY)
-    type(latticePoint) :: lastLaticePoint !収束判断のための直前の値
+    type(latticePoint) :: lastLatticePoints(latticeSizeX, latticeSizeY)
 
     integer :: i, j, k, l
     integer :: loopCount = 0
 
     logical :: shouldContinue = .true.
 
-    double precision, parameter :: convergenceThreshold = 0.0001 !収束条件
+    double precision, parameter :: convergenceThreshold = 0.00001 !収束条件
 
     latticePoints = latticePoint(psi=0.0, omega=0.0, u=0.0, v=0.0, D=0.0, p=0.0)
-    
+    lastLatticePoints = latticePoint(psi=0.0, omega=0.0, u=0.0, v=0.0, D=0.0, p=0.0)
+
     do while(shouldContinue)
         shouldContinue = .false.
         loopCount = loopCount + 1
         do i = 1, latticeSizeX
             do j = 1, latticeSizeY
-                lastLaticePoint = latticePoints(i, j)
+                lastLatticePoints = latticePoints
                 if (i == 1) then 
                     latticePoints(i, j)%psi = 0
-                    latticePoints(i, j)%omega = 2.0 * latticePoints(i + 1, j)%psi
+                    latticePoints(i, j)%omega = 2.0 * lastLatticePoints(i + 1, j)%psi
                 else if (i == latticeSizeX) then
                     latticePoints(i, j)%psi = 0
-                    latticePoints(i, j)%omega = 2.0 * latticePoints(i - 1, j)%psi
+                    latticePoints(i, j)%omega = 2.0 * lastLatticePoints(i - 1, j)%psi
                 else if (j == 1) then
                     latticePoints(i, j)%psi = 0
-                    latticePoints(i, j)%omega = 2.0 * latticePoints(i , j + 1)%psi  
+                    latticePoints(i, j)%omega = 2.0 * lastLatticePoints(i , j + 1)%psi  
                 else if (j == latticeSizeY) then 
                     latticePoints(i, j)%psi = 0
-                    latticePoints(i, j)%omega = 2.0 * (latticePoints(i , j - 1)%psi - h)
+                    latticePoints(i, j)%omega = 2.0 * (lastLatticePoints(i , j - 1)%psi - h)
                 else
                     latticePoints(i, j)%omega = &
-                        (latticePoints(i-1, j)%omega + &
-                        latticePoints(i+1, j)%omega + &
-                        latticePoints(i, j-1)%omega + &
-                        latticePoints(i, j+1)%omega) / 4.0 + &
-                        (latticePoints(i-1, j)%omega - latticePoints(i+1, j)%omega) * &
-                        (latticePoints(i, j-1)%psi - latticePoints(i, j+1)%psi) - &
-                        (latticePoints(i-1, j)%psi - latticePoints(i+1, j)%psi) * &
-                        (latticePoints(i, j-1)%omega - latticePoints(i, j+1)%omega) * &
+                        (lastLatticePoints(i-1, j)%omega + &
+                        lastLatticePoints(i+1, j)%omega + &
+                        lastLatticePoints(i, j-1)%omega + &
+                        lastLatticePoints(i, j+1)%omega) / 4.0 + &
+                        ((lastLatticePoints(i+1, j)%psi - lastLatticePoints(i-1, j)%psi) * &
+                        (lastLatticePoints(i, j+1)%omega - lastLatticePoints(i, j-1)%omega) - &
+                        (lastLatticePoints(i+1, j)%omega - lastLatticePoints(i-1, j)%omega) * &
+                        (lastLatticePoints(i, j+1)%psi - lastLatticePoints(i, j-1)%psi)) * &
                         reynolds / 16.0
-                    
+
                     latticePoints(i, j)%psi = &
-                        (latticePoints(i-1, j)%psi + &
-                        latticePoints(i+1, j)%psi + &
-                        latticePoints(i, j+1)%psi + &
-                        latticePoints(i, j-1)%psi - &
-                        latticePoints(i, j)%omega) / 4.0
+                        (lastLatticePoints(i-1, j)%psi + &
+                        lastLatticePoints(i+1, j)%psi + &
+                        lastLatticePoints(i, j+1)%psi + &
+                        lastLatticePoints(i, j-1)%psi - &
+                        lastLatticePoints(i, j)%omega) / 4.0
                 end if
                 shouldContinue = shouldContinue.or. &
-                    isUnconverged(latticePoints(i, j)%omega, lastLaticePoint%omega).or. &
-                    isUnconverged(latticePoints(i, j)%psi, lastLaticePoint%psi)
+                    isUnconverged(latticePoints(i, j)%omega, lastLatticePoints(i,j)%omega).or. &
+                    isUnconverged(latticePoints(i, j)%psi, lastLatticePoints(i,j)%psi)
             end do
         end do
     end do
@@ -77,7 +78,6 @@ program cavity
             latticePoints(i, j)%omega = - latticePoints(i, j)%omega / h ** 2.0
         end do
     end do
-
 
     do i = 1, latticeSizeX
         do j = 1, latticeSizeY
@@ -116,13 +116,16 @@ program cavity
 
     loopCount = 0
     shouldContinue = .true.
-    do k = 1, 30000
+    do k = 1, 10000
         shouldContinue = .false.
         loopCount = loopCount + 1
         do i = 1, latticeSizeX
             do j = 1, latticeSizeY
-                lastLaticePoint = latticePoints(i, j)
-                if (i == 1) then 
+                lastLatticePoints = latticePoints
+                if (i==1 .and. j==1 .or. i==1 .and. j==2.or. i==2 .and. j==1.or. i==2 .and. j==2) then 
+                    !latticePoints(i, j)%p = latticePoints(i+1, j)%p + 2 * latticePoints(i+1, j)%u/reynolds*h
+                    latticePoints(i, j)%p = 0
+                else if (i == 1) then 
                     !latticePoints(i, j)%p = latticePoints(i+1, j)%p + 2 * latticePoints(i+1, j)%u/reynolds*h
                     latticePoints(i, j)%p = latticePoints(i+1, j)%p
                 else if (i == latticeSizeX) then
@@ -130,25 +133,24 @@ program cavity
                     latticePoints(i, j)%p = latticePoints(i-1, j)%p
                 else if (j == 1) then
                     !latticePoints(i, j)%p = latticePoints(i, j+1)%p + 2 * latticePoints(i, j+1)%v/reynolds*h
-                    latticePoints(i, j)%p = 0
+                    latticePoints(i, j)%p = latticePoints(i, j+1)%p
                 else if (j == latticeSizeY) then 
                     !latticePoints(i, j)%p = latticePoints(i, j-1)%p - 2 * latticePoints(i, j-1)%v/reynolds*h
                     latticePoints(i, j)%p = latticePoints(i, j-1)%p
                 else
-                    b = 2 *( &
-                        (latticePoints(i+1, j)%psi + latticePoints(i-1, j)%psi - 2 * latticePoints(i, j)%psi) * &
-                        (latticePoints(i, j+1)%psi + latticePoints(i, j-1)%psi - 2 * latticePoints(i, j)%psi) - &
-                        ((latticePoints(i+1, j+1)%psi - latticePoints(i+1, j-1)%psi - &
-                        latticePoints(i-1, j+1)%psi + latticePoints(i-1, j-1)%psi) /4) ** 2.0 &
-                   ) / h**2
+                    b = 2 * ( &
+                        (latticePoints(i+1,j)%psi + latticePoints(i-1, j)%psi - 2 * latticePoints(i, j)%psi)/h**2 &
+                        * (latticePoints(i,j+1)%psi + latticePoints(i, j-1)%psi - 2 * latticePoints(i, j)%psi)/h**2  & 
+                        - ((latticePoints(i+1,j+1)%psi-latticePoints(i+1,j-1)%psi - &
+                        latticePoints(i-1,j+1)%psi + latticePoints(i-1,j-1)%psi)/(4*h**2))**2)
                     latticePoints(i, j)%p = &
                         (latticePoints(i-1, j)%p + &
                         latticePoints(i+1, j)%p + &
                         latticePoints(i, j+1)%p + &
-                        latticePoints(i, j-1)%p - b ) / 4.0
+                        latticePoints(i, j-1)%p - b * h**2 ) / 4.0
                 end if
                 shouldContinue = shouldContinue.or. &
-                    isUnconverged(latticePoints(i, j)%p, lastLaticePoint%p)
+                    isUnconverged(latticePoints(i, j)%p, lastLatticePoints(i, j)%p)
             end do
         end do
     end do
@@ -189,7 +191,7 @@ program cavity
     open(14, file='outputs/data/velocity.csv')
     do i = 1, latticeSizeX
         do j = 1, latticeSizeY
-            if (mod(i-1,3) == 0 .and. mod(j-1,3) == 0 ) then
+            if (mod(i,2) == 1 .and. mod(j,2) == 1 ) then
                 write (14,'(4e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%u, latticePoints(i, j)%v
             end if
         end do
