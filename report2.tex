@@ -1,7 +1,7 @@
 \RequirePackage{plautopatch}
 \documentclass[upLaTeX,a4paper]{jsarticle}
 \usepackage{listings,jlisting,amsmath,otf,here,empheq}
-\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx,dvips]{graphicx}
 
 \lstset{
 breaklines = true,
@@ -11,7 +11,7 @@ tabsize = 4,
 captionpos = t
 }
 
-\title{流体の数値計算プログラムの作成 レポート 修正版2}
+\title{流体の数値計算プログラムの作成 修正レポート}
 \author{B4 津田修一朗}
 \date{2021/6/15}
 
@@ -23,31 +23,74 @@ captionpos = t
 \section{数値計算の手順,手法}
 \subsection{流れ関数と渦度を求めるプログラムの実装}
 流れ関数-渦度法により,cavity内の流れを解いた.
-今回は基礎方程式の実装を修正した。
+差分方程式の実装に誤りが合ったため修正した。
 
-また、これまでは収束条件を流れ関数$varPsi$ 渦度$\omega$のイテレーションごとの差がともに0.00001以下になることとしていたものを,0.000001に変更した.
-これにより、cavity底付近の逆流渦が大きくなることが確認できたため,前回の条件では十分に収束に至っていなかったことが考えられる.
+また、これまでは流れ関数$\varPsi$渦度$\omega$の収束条件を,すべての格子点において
+\begin{equation}
+  |\varPsi^n_{i,j}-\varPsi^{n-1}_{i,j}| < 0.0001  かつ  |\omega^n_{i,j}-\omega^{n-1}_{i,j}| < 0.0001
+\end{equation}
+が成り立つとしていたが,
+\begin{equation}
+  |\varPsi^n_{i,j}-\varPsi^{n-1}_{i,j}| < 0.00001  かつ  |\omega^n_{i,j}-\omega^{n-1}_{i,j}| < 0.00001
+\end{equation}
+に変更した。
+これにより、流線図においてcavity底面付近の逆流渦が大きくなったことが確認されたため,前回までの収束条件では十分に収束できていなかったと考えられる.
 
-ただし、収束条件を厳しくした結果,格子点$151 × 151$に設定した時にはプログラムを実行してから30分程度経過しても収束条件を満たさなかった。
+しかし、収束条件を厳しくした結果,格子点$151 × 151$に設定した時にはプログラムを実行してから30分程度経過しても収束条件を満たさなかった。
 そのため,今回は(i)レイノルズ数$Re = 50$, 格子点$51\times 51$, (ii)レイノルズ数$Re = 200$, 格子点$101\times 101$
 でシミュレーションを行った.
 
 \subsection{速度ベクトル図の描画}
-cavity底面付近の逆流渦の挙動を確認する為に、各格子点における速度ベクトルをその大きさで割り,
+速度ベクトルは, x = 0, 0.02, . . . 0.98, 1, y = 0, 0.02, . . . 0.98, 1 上の格子点のものを描画した.
+また,cavity底面付近の逆流渦の挙動を確認する為に、各格子点における速度ベクトルをその大きさで割り,
 流れの方向が分かりやすくなるようにした図を追加した.
-
-\subsection{流線図の描画}
-流線は流れ関数$\varPsi = const$で表されることを用いて,流れ関数と渦度を求めるプログラムにより求めた流れ関数を用いて流線図を描画した.
 
 \subsection{等圧線図の描画}
 前回までは圧力のポアソン方程式を用いた差分方程式により圧力場を求めていたが,確からしい結果が得られなかったため,\cite{2}で紹介された方法を用いた.
-無次元化されたNavier-Stokes方程式は,
+無次元化された定常流のNavier-Stokes方程式は,
 
 \begin{equation}
   \begin{split}
-    \frac{\partial u}{\partial t}
+    u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} & = - \frac{\partial p}{\partial x} + \frac{1}{Re}\left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right) \\
+    u\frac{\partial v}{\partial x} + v\frac{\partial v}{\partial y} & = - \frac{\partial p}{\partial y} + \frac{1}{Re}\left( \frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} \right) \\
   \end{split}
 \end{equation}
+であり,これを変形し,
+\begin{equation}
+  \begin{split}
+    \frac{\partial p}{\partial x} & = \frac{1}{Re}\left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right) - u\frac{\partial u}{\partial x} - v\frac{\partial u}{\partial y}\\
+    \frac{\partial p}{\partial y} & = \frac{1}{Re}\left( \frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} \right) - u\frac{\partial v}{\partial x} - v\frac{\partial v}{\partial y}\\
+  \end{split}
+\end{equation}
+
+差分方程式は
+\begin{equation}
+  \begin{split}
+    p_{i,j} = & p_{i-1,j} + \frac{1}{Re} \left( \frac{u_{i+1, j} + u_{i,j+1} + u_{i-1, j} + u_{i,j-1} - 4u_{i,j}}{h} \right) \\
+     & - u_{i,j} \frac{u_{i+1,j}-u_{i-1}}{2} - v_{i,j}\frac{u_{i,j+1}-u_{i,j-1}}{2}
+  \end{split}
+\end{equation}
+\begin{equation}
+  \begin{split}
+  p_{i,j} = & p_{i,j-1} + \frac{1}{Re} \left( \frac{v_{i+1, j} + v_{i,j+1} + v_{i-1, j} + v_{i,j-1} - 4v_{i,j}}{h} \right) \\
+  & - u_{i,j} \frac{u_{i+1,j}-u_{i-1}}{2} - v_{i,j}\frac{u_{i,j+1}-u_{i,j-1}}{2}
+  \end{split}
+\end{equation}
+とし,点(0,0)のにおける圧力$p=0$とした.
+境界条件は
+\begin{empheq}{alignat=2}
+  \frac{\partial p}{\partial x} = 0 \quad (x=0, 1) \\
+  \frac{\partial p}{\partial x} = 0 \quad (y=0,1)
+\end{empheq}
+であり,点(h,0),(0,h),(h,h)における圧力も$p=0$とおける.
+計算手順は
+\begin{enumerate}
+  \item $x=h$上の圧力を式()により求める
+  \item 1.で求めた圧力値を起点として、式()より壁面以外の残りの点の圧力を求める
+  \item 境界条件により,壁面上の圧力値を求める
+\end{enumerate}
+とした.
+
 
 \section{数値計算の結果}
 \subsection{速度ベクトル図}
@@ -65,12 +108,6 @@ cavity底面付近の逆流渦の挙動を確認する為に、各格子点に�
   \includegraphics[height=9.5cm]{outputs/img/velocity_vector_re200.png}
   \caption{速度ベクトル図(ii)}
   \label{fig:velocity_vector_re200}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[height=9.5cm]{outputs/img/velocity_vector_re500.png}
-  \caption{速度ベクトル図(iii)}
-  \label{fig:velocity_vector_re500}
 \end{figure}
 
 
@@ -92,12 +129,6 @@ cavity底面付近の逆流渦の挙動を確認する為に、各格子点に�
   \caption{流線図(ii)}
   \label{fig:velocity_vector_re200}
 \end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[height=9.5cm]{outputs/img/stream_line_re500.png}
-  \caption{流線図(iii)}
-  \label{fig:velocity_vector_re500}
-\end{figure}
 
 
 \subsection{等圧線図}
@@ -105,21 +136,15 @@ cavity底面付近の逆流渦の挙動を確認する為に、各格子点に�
 $(0,0),(1,0)$を結ぶ線分付近で圧力が高く,点(0,1),(1,1)付近で圧力が低い結果となった.
 \begin{figure}[H]
   \centering
-  \includegraphics[height=9.5cm]{outputs/img/p_re50.png}
+  \includegraphics[height=9.5cm, clip,trim=0 200 0 0]{outputs/img/p_re50.png}
   \caption{等圧線図(i)}
   \label{fig:p_re50}
 \end{figure}
 \begin{figure}[H]
   \centering
-  \includegraphics[height=9.5cm]{outputs/img/p_re200.png}
+  \includegraphics[height=9.5cm, clip,trim=0 200 0 0]{outputs/img/p_re200.png}
   \caption{等圧線図(ii)}
   \label{fig:p_re200}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[height=9.5cm]{outputs/img/p_re500.png}
-  \caption{等圧線図(iii)}
-  \label{fig:p_re500}
 \end{figure}
 
 \begin{thebibliography}{9}

@@ -28,9 +28,9 @@ set contour base
 set view 0,0
 set pm3d
 set palette rgbformula 22,13,-31
-set cntrparam levels 30
+set cntrparam levels 40
 set noclabel
-set cbrange[-0.2:0.2]
+set cbrange[-0.3:0.3]
 set view equal xy
 splot 'cavity_wall.csv' with lines linewidth 2 title "Wall" nocontour ,'outputs/data/p.csv' w l linewidth 2 title "Pressure Contour" nosurface
 

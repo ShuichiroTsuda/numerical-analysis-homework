@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  30 JUN 2021 16:01
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  1 JUL 2021 07:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -251,9 +251,6 @@ LaTeX Warning: Label `fig:velocity_vector_re50' multiply defined.
 
 LaTeX Warning: Label `fig:velocity_vector_re200' multiply defined.
 
-
-LaTeX Warning: Label `fig:velocity_vector_re500' multiply defined.
-
 )
 \openout1 = `report2.aux'.
 
@@ -305,48 +302,51 @@ LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
 (Font)              scaled to size 6.47278pt on input line 28.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
 (Font)              scaled to size 4.62341pt on input line 28.
-File: outputs/img/velocity_vector_re50.png Graphic file (type bmp)
-<outputs/img/velocity_vector_re50.png>
-LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 60.
-LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 60.
 [1
 
 ]
+File: outputs/img/velocity_vector_re50.png Graphic file (type bmp)
+<outputs/img/velocity_vector_re50.png>
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 8.32214pt on input line 103.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 8.32214pt on input line 103.
 File: outputs/img/velocity_vector_re200.png Graphic file (type bmp)
 <outputs/img/velocity_vector_re200.png>
-File: outputs/img/velocity_vector_re500.png Graphic file (type bmp)
-<outputs/img/velocity_vector_re500.png>
 [2] [3]
 File: outputs/img/stream_line_re50.png Graphic file (type bmp)
 <outputs/img/stream_line_re50.png>
 File: outputs/img/stream_line_re200.png Graphic file (type bmp)
 <outputs/img/stream_line_re200.png>
-File: outputs/img/stream_line_re500.png Graphic file (type bmp)
-<outputs/img/stream_line_re500.png>
 [4]
 File: outputs/img/p_re50.png Graphic file (type bmp)
 <outputs/img/p_re50.png>
-[5]
+
+Overfull \hbox (2.13918pt too wide) in paragraph at lines 139--140
+ [][] 
+ []
+
 File: outputs/img/p_re200.png Graphic file (type bmp)
 <outputs/img/p_re200.png>
-File: outputs/img/p_re500.png Graphic file (type bmp)
-<outputs/img/p_re500.png>
-[6] [7]
-Package plautopatch Info: No additional packages loaded on input line 131.
-[8] (outputs/tex/report2.aux)
+
+Overfull \hbox (2.13918pt too wide) in paragraph at lines 145--146
+ [][] 
+ []
+
+[5] [6]
+Package plautopatch Info: No additional packages loaded on input line 156.
+[7] (outputs/tex/report2.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5932 strings out of 479466
- 87379 string characters out of 5870548
- 398510 words of memory out of 5000000
- 23587 multiletter control sequences out of 15000+600000
+ 5918 strings out of 479466
+ 86964 string characters out of 5870548
+ 413509 words of memory out of 5000000
+ 23576 multiletter control sequences out of 15000+600000
  415055 words of font info for 85 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 68i,15n,74p,390b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,17n,74p,396b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on outputs/tex/report2.dvi (8 pages, 7892 bytes).
+Output written on outputs/tex/report2.dvi (7 pages, 11704 bytes).

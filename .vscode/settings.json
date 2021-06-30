@@ -1,5 +1,5 @@
 {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     // ---------- Language ----------
     "[tex]": {
         // スニペット補完中にも補完を使えるようにする

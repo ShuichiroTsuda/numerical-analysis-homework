@@ -7,11 +7,11 @@ program cavity
         double precision p
     end type latticePoint
 
-    integer, parameter :: latticeSizeX = 151
-    integer, parameter :: latticeSizeY = 151
-    integer :: offset = (latticeSizeX-1) / 25
+    integer, parameter :: latticeSizeX = 51
+    integer, parameter :: latticeSizeY = 51
+    integer :: offset = (latticeSizeX-1) / 50
 
-    double precision, parameter :: reynolds = 500
+    double precision, parameter :: reynolds = 50
 
     double precision :: h = 1.0 / (latticeSizeX-1)
     double precision :: size = 0.0
@@ -27,7 +27,7 @@ program cavity
 
     logical :: shouldContinue = .true.
 
-    double precision, parameter :: convergenceThreshold = 0.000001 !収束条件
+    double precision, parameter :: convergenceThreshold = 0.00001 !収束条件
 
     latticePoints = latticePoint(psi=0.0, omega=0.0, u=0.0, v=0.0, D=0.0, p=0.0)
     lastLatticePoints = latticePoint(psi=0.0, omega=0.0, u=0.0, v=0.0, D=0.0, p=0.0)
