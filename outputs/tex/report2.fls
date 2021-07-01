@@ -348,6 +348,14 @@ INPUT ./outputs/img/velocity_vector_re200.png
 INPUT ./outputs/img/velocity_vector_re200.png
 INPUT outputs/img/velocity_vector_re200.png
 INPUT extractbb -B cropbox -O outputs/img/velocity_vector_re200.png
+INPUT ./outputs/img/velocity_abs_re50.png
+INPUT ./outputs/img/velocity_abs_re50.png
+INPUT outputs/img/velocity_abs_re50.png
+INPUT extractbb -B cropbox -O outputs/img/velocity_abs_re50.png
+INPUT ./outputs/img/velocity_abs_re200.png
+INPUT ./outputs/img/velocity_abs_re200.png
+INPUT outputs/img/velocity_abs_re200.png
+INPUT extractbb -B cropbox -O outputs/img/velocity_abs_re200.png
 INPUT ./outputs/img/stream_line_re50.png
 INPUT ./outputs/img/stream_line_re50.png
 INPUT outputs/img/stream_line_re50.png

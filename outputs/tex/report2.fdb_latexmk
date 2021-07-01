@@ -1,10 +1,10 @@
 # Fdb version 3
-["dvipdf"] 1625092480 "outputs/tex/report2.dvi" "outputs/tex/report2.pdf" "outputs/tex/report2" 1625092494
-  "outputs/tex/report2.dvi" 1625092480 11704 f69f8711c88bc927f91a8aa0e3ed0592 "latex"
+["dvipdf"] 1625099055 "outputs/tex/report2.dvi" "outputs/tex/report2.pdf" "outputs/tex/report2" 1625100462
+  "outputs/tex/report2.dvi" 1625099055 11624 11ed6668825879f2ec9b2e8be02480f1 "latex"
   (generated)
   "outputs/tex/report2.pdf"
-["latex"] 1625092478 "/Users/shuichirotsuda/lab/numerical-analysis-homework/report2.tex" "outputs/tex/report2.dvi" "report2" 1625092494
-  "/Users/shuichirotsuda/lab/numerical-analysis-homework/report2.tex" 1625092478 7591 f24a80e0175097419c5445d2943baf9f ""
+["latex"] 1625099053 "/Users/shuichirotsuda/lab/numerical-analysis-homework/report2.tex" "outputs/tex/report2.dvi" "report2" 1625100462
+  "/Users/shuichirotsuda/lab/numerical-analysis-homework/report2.tex" 1625100462 7576 8207cbd57b9baebbb4f8510a6c6887b4 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1463434352 468 53f854284f6afa6c36aaa2d1090ecc12 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1463434352 856 39c171483fe1bb7d0e1368980c0c205b ""
@@ -61,11 +61,13 @@
   "outputs/img/p_re50.png" 1625090890 76423 98d826ba534aa08e56d1b9699967931b ""
   "outputs/img/stream_line_re200.png" 1625091381 58958 338021edede0d8736d09965a1e9223f8 ""
   "outputs/img/stream_line_re50.png" 1625091651 53569 6fc393df9b58b5217af79c12c2ca66be ""
+  "outputs/img/velocity_abs_re200.png" 1625091343 1044249 0eff4f421e5857c7b87e33d0ac0c8d44 ""
+  "outputs/img/velocity_abs_re50.png" 1625090818 1043860 28e914f0bb24ccca58f27dc1bceaddb7 ""
   "outputs/img/velocity_vector_re200.png" 1625091357 449597 4d87f7bb7444f7602e75954ae7595d80 ""
   "outputs/img/velocity_vector_re50.png" 1625090803 426416 c458e965662ba7e7d4905611b79c1698 ""
-  "outputs/tex/report2.aux" 1625092480 1970 9d90af32f879f0fc9946ba58de5ca65c "latex"
-  "report2.tex" 1625092478 7591 f24a80e0175097419c5445d2943baf9f ""
+  "outputs/tex/report2.aux" 1625099055 2237 7633ad462dd799a7269fb01451f75a43 "latex"
+  "report2.tex" 1625100462 7576 8207cbd57b9baebbb4f8510a6c6887b4 ""
   (generated)
-  "outputs/tex/report2.log"
-  "outputs/tex/report2.aux"
   "outputs/tex/report2.dvi"
+  "outputs/tex/report2.aux"
+  "outputs/tex/report2.log"
