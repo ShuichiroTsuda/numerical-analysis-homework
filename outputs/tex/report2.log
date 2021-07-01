@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  1 JUL 2021 09:24
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  1 JUL 2021 14:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -308,9 +308,9 @@ LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
 File: outputs/img/velocity_vector_re50.png Graphic file (type bmp)
 <outputs/img/velocity_vector_re50.png>
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 102.
+(Font)              scaled to size 8.32214pt on input line 103.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 102.
+(Font)              scaled to size 8.32214pt on input line 103.
 File: outputs/img/velocity_vector_re200.png Graphic file (type bmp)
 <outputs/img/velocity_vector_re200.png>
 [2] [3]
@@ -322,14 +322,14 @@ File: outputs/img/velocity_abs_re200.png Graphic file (type bmp)
 File: outputs/img/stream_line_re50.png Graphic file (type bmp)
 <outputs/img/stream_line_re50.png>
 
-Overfull \hbox (2.13918pt too wide) in paragraph at lines 134--135
+Overfull \hbox (2.13918pt too wide) in paragraph at lines 135--136
  [][] 
  []
 
 File: outputs/img/stream_line_re200.png Graphic file (type bmp)
 <outputs/img/stream_line_re200.png>
 
-Overfull \hbox (2.13918pt too wide) in paragraph at lines 140--141
+Overfull \hbox (2.13918pt too wide) in paragraph at lines 141--142
  [][] 
  []
 
@@ -337,7 +337,7 @@ Overfull \hbox (2.13918pt too wide) in paragraph at lines 140--141
 File: outputs/img/p_re50.png Graphic file (type bmp)
 <outputs/img/p_re50.png>
 
-Overfull \hbox (2.13918pt too wide) in paragraph at lines 153--154
+Overfull \hbox (2.13918pt too wide) in paragraph at lines 154--155
  [][] 
  []
 
@@ -345,24 +345,24 @@ Overfull \hbox (2.13918pt too wide) in paragraph at lines 153--154
 File: outputs/img/p_re200.png Graphic file (type bmp)
 <outputs/img/p_re200.png>
 
-Overfull \hbox (2.13918pt too wide) in paragraph at lines 159--160
+Overfull \hbox (2.13918pt too wide) in paragraph at lines 160--161
  [][] 
  []
 
 [7]
-Package plautopatch Info: No additional packages loaded on input line 170.
+Package plautopatch Info: No additional packages loaded on input line 171.
 [8] (outputs/tex/report2.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5926 strings out of 479466
- 87234 string characters out of 5870548
- 412509 words of memory out of 5000000
- 23582 multiletter control sequences out of 15000+600000
+ 5927 strings out of 479466
+ 87250 string characters out of 5870548
+ 412508 words of memory out of 5000000
+ 23583 multiletter control sequences out of 15000+600000
  415055 words of font info for 85 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  68i,17n,74p,396b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on outputs/tex/report2.dvi (8 pages, 11624 bytes).
+Output written on outputs/tex/report2.dvi (8 pages, 11724 bytes).
