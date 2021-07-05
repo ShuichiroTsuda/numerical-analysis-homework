@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  1 JUL 2021 14:29
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.euc) (TeX Live 2021) (preloaded format=platex 2021.4.11)  5 JUL 2021 20:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -225,20 +225,56 @@ File: dvipdfmx.def 2021/03/18 v5.0j Graphics/color driver for dvipdfmx
 ))
 \Gin@req@height=\dimen193
 \Gin@req@width=\dimen194
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: dvipdfmx.def on input line 147.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen195
+\captionmargin@=\dimen196
+\captionwidth=\dimen197
+\caption@tempdima=\dimen198
+\caption@indent=\dimen199
+\caption@parindent=\dimen256
+\caption@hangindent=\dimen257
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->{\small \advance \leftskip .0628\linewidth \advance \rightskip .0628\linewidth \vskip \abovecaptionskip \sbox \@tempboxa {#1\hskip 1zw\relax #2}\ifdim \wd \@tempboxa <\hsize \centering \fi #1{\hskip 1zw\relax }#2\par \vskip \belowcaptionskip } on input line 1139.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count287
+\c@continuedfloat=\count288
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+\c@subfigure=\count289
+\c@subtable=\count290
 )
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 18.
+(Font)              scaled to size 9.24683pt on input line 22.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 18.
+(Font)              scaled to size 9.24683pt on input line 22.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2021-03-18 L3 backend support: dvips
 \l__pdf_internal_box=\box74
-\g__pdf_backend_object_int=\count287
+\g__pdf_backend_object_int=\count291
 \l__pdf_backend_content_box=\box75
 \l__pdf_backend_model_box=\box76
-\g__pdf_backend_annotation_int=\count288
-\g__pdf_backend_link_int=\count289
-\g__pdf_backend_link_sf_int=\count290
+\g__pdf_backend_annotation_int=\count292
+\g__pdf_backend_link_int=\count293
+\g__pdf_backend_link_sf_int=\count294
 )
 
 LaTeX Warning: Unused global option(s):
@@ -246,123 +282,256 @@ LaTeX Warning: Unused global option(s):
 
 (outputs/tex/report2.aux
 
+LaTeX Warning: Label `ラベル1' multiply defined.
+
+
+LaTeX Warning: Label `sub@ラベル1' multiply defined.
+
+
+LaTeX Warning: Label `ラベル2' multiply defined.
+
+
+LaTeX Warning: Label `sub@ラベル2' multiply defined.
+
+
+LaTeX Warning: Label `ラベル' multiply defined.
+
+
 LaTeX Warning: Label `fig:velocity_vector_re50' multiply defined.
 
 
 LaTeX Warning: Label `fig:velocity_vector_re200' multiply defined.
 
+
+LaTeX Warning: Label `ラベル1' multiply defined.
+
+
+LaTeX Warning: Label `sub@ラベル1' multiply defined.
+
+
+LaTeX Warning: Label `ラベル2' multiply defined.
+
+
+LaTeX Warning: Label `sub@ラベル2' multiply defined.
+
+
+LaTeX Warning: Label `ラベル' multiply defined.
+
+
+LaTeX Warning: Label `ラベル1' multiply defined.
+
+
+LaTeX Warning: Label `sub@ラベル1' multiply defined.
+
+
+LaTeX Warning: Label `ラベル2' multiply defined.
+
+
+LaTeX Warning: Label `sub@ラベル2' multiply defined.
+
+
+LaTeX Warning: Label `ラベル' multiply defined.
+
 )
 \openout1 = `report2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-\c@lstlisting=\count291
-\Hy@linkcounter=\count292
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+\c@lstlisting=\count295
+\Hy@linkcounter=\count296
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 19.
+(Font)              scaled to size 15.9785pt on input line 23.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 19.
+(Font)              scaled to size 15.9785pt on input line 23.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 19.
+(Font)              scaled to size 11.09619pt on input line 23.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 19.
+(Font)              scaled to size 11.09619pt on input line 23.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 19.
+(Font)              scaled to size 7.39746pt on input line 23.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 19.
+(Font)              scaled to size 5.5481pt on input line 23.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 23.
+(Font)              scaled to size 13.31541pt on input line 27.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 23.
+(Font)              scaled to size 13.31541pt on input line 27.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 23.
+(Font)              scaled to size 13.31541pt on input line 27.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 23.
+(Font)              scaled to size 13.31541pt on input line 27.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 24.
+(Font)              scaled to size 11.09619pt on input line 28.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 24.
+(Font)              scaled to size 11.09619pt on input line 28.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 28.
+(Font)              scaled to size 6.47278pt on input line 41.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 28.
+(Font)              scaled to size 4.62341pt on input line 41.
 [1
 
 ]
 File: outputs/img/velocity_vector_re50.png Graphic file (type bmp)
 <outputs/img/velocity_vector_re50.png>
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 103.
+(Font)              scaled to size 8.32214pt on input line 120.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 103.
+(Font)              scaled to size 8.32214pt on input line 120.
+LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <9> not available
+(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 120.
+LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
+(Font)              scaled to size 8.32214pt on input line 120.
+LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <9> not available
+(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 120.
+LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
+(Font)              scaled to size 8.32214pt on input line 120.
+[2]
 File: outputs/img/velocity_vector_re200.png Graphic file (type bmp)
 <outputs/img/velocity_vector_re200.png>
-[2] [3]
+[3]
 File: outputs/img/velocity_abs_re50.png Graphic file (type bmp)
 <outputs/img/velocity_abs_re50.png>
 File: outputs/img/velocity_abs_re200.png Graphic file (type bmp)
 <outputs/img/velocity_abs_re200.png>
 [4]
+File: outputs/img/velocity_vector_corner1_re50.png Graphic file (type bmp)
+<outputs/img/velocity_vector_corner1_re50.png>
+
+Overfull \hbox (80.62785pt too wide) in paragraph at lines 172--172
+ [][] 
+ []
+
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 172.
+LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <8> not available
+(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 172.
+LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 172.
+LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <8> not available
+(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 172.
+LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 172.
+File: outputs/img/velocity_vector_corner2_re50.png Graphic file (type bmp)
+<outputs/img/velocity_vector_corner2_re50.png>
+
+Overfull \hbox (80.62785pt too wide) in paragraph at lines 172--172
+ [][] 
+ []
+
+File: outputs/img/velocity_vector_corner1_re200.png Graphic file (type bmp)
+<outputs/img/velocity_vector_corner1_re200.png>
+
+Overfull \hbox (80.62785pt too wide) in paragraph at lines 172--172
+ [][] 
+ []
+
+File: outputs/img/velocity_vector_corner2_re200.png Graphic file (type bmp)
+<outputs/img/velocity_vector_corner2_re200.png>
+
+Overfull \hbox (80.62785pt too wide) in paragraph at lines 172--172
+ [][] 
+ []
+
+[5]
 File: outputs/img/stream_line_re50.png Graphic file (type bmp)
 <outputs/img/stream_line_re50.png>
 
-Overfull \hbox (2.13918pt too wide) in paragraph at lines 135--136
+Overfull \hbox (2.13918pt too wide) in paragraph at lines 181--182
  [][] 
  []
 
 File: outputs/img/stream_line_re200.png Graphic file (type bmp)
 <outputs/img/stream_line_re200.png>
 
-Overfull \hbox (2.13918pt too wide) in paragraph at lines 141--142
- [][] 
- []
-
-[5]
-File: outputs/img/p_re50.png Graphic file (type bmp)
-<outputs/img/p_re50.png>
-
-Overfull \hbox (2.13918pt too wide) in paragraph at lines 154--155
+Overfull \hbox (2.13918pt too wide) in paragraph at lines 187--188
  [][] 
  []
 
 [6]
-File: outputs/img/p_re200.png Graphic file (type bmp)
-<outputs/img/p_re200.png>
+File: outputs/img/stream_line_corner1_re50.png Graphic file (type bmp)
+<outputs/img/stream_line_corner1_re50.png>
 
-Overfull \hbox (2.13918pt too wide) in paragraph at lines 160--161
+Overfull \hbox (4.06172pt too wide) in paragraph at lines 220--220
  [][] 
  []
 
+File: outputs/img/stream_line_corner2_re50.png Graphic file (type bmp)
+<outputs/img/stream_line_corner2_re50.png>
+
+Overfull \hbox (4.06172pt too wide) in paragraph at lines 220--220
+ [][] 
+ []
+
+
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 220--220
+[][] [] 
+ []
+
 [7]
-Package plautopatch Info: No additional packages loaded on input line 171.
-[8] (outputs/tex/report2.aux)
+File: outputs/img/stream_line_corner1_re200.png Graphic file (type bmp)
+<outputs/img/stream_line_corner1_re200.png>
+
+Overfull \hbox (4.06172pt too wide) in paragraph at lines 220--220
+ [][] 
+ []
+
+File: outputs/img/stream_line_corner2_re200.png Graphic file (type bmp)
+<outputs/img/stream_line_corner2_re200.png>
+
+Overfull \hbox (4.06172pt too wide) in paragraph at lines 220--220
+ [][] 
+ []
+
+
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 220--220
+[][]$[]$[] []$[]$[] 
+ []
+
+File: outputs/img/p_re50.png Graphic file (type bmp)
+<outputs/img/p_re50.png>
+
+Overfull \hbox (2.13918pt too wide) in paragraph at lines 228--229
+ [][] 
+ []
+
+File: outputs/img/p_re200.png Graphic file (type bmp)
+<outputs/img/p_re200.png>
+
+Overfull \hbox (2.13918pt too wide) in paragraph at lines 234--235
+ [][] 
+ []
+
+[8] [9]
+Package plautopatch Info: No additional packages loaded on input line 245.
+[10] (outputs/tex/report2.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5927 strings out of 479466
- 87250 string characters out of 5870548
- 412508 words of memory out of 5000000
- 23583 multiletter control sequences out of 15000+600000
- 415055 words of font info for 85 fonts, out of 8000000 for 9000
+ 7386 strings out of 479466
+ 115569 string characters out of 5870548
+ 438161 words of memory out of 5000000
+ 25017 multiletter control sequences out of 15000+600000
+ 416177 words of font info for 92 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  68i,17n,74p,396b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on outputs/tex/report2.dvi (8 pages, 11724 bytes).
+Output written on outputs/tex/report2.dvi (10 pages, 18408 bytes).

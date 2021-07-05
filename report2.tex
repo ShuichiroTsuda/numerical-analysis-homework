@@ -2,6 +2,10 @@
 \documentclass[upLaTeX,a4paper]{jsarticle}
 \usepackage{listings,jlisting,amsmath,otf,here,empheq}
 \usepackage[dvipdfmx,dvips]{graphicx}
+\usepackage[dvipdfmx]{color}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\captionsetup{compatibility=false}
 
 \lstset{
 breaklines = true,
@@ -23,17 +27,28 @@ captionpos = t
 \section{数値計算の手順,手法}
 \subsection{流れ関数と渦度を求めるプログラムの実装}
 流れ関数-渦度法により,cavity内の流れを解いた.
-差分方程式の実装に誤りが合ったため修正した.
+
+\textcolor{red}{
+差分方程式の実装で,資料\cite{1}の式(4.5)
+\begin{displaymath}
+  v_o = \frac{v_1+v_2+v_3+v_4}{4}+\frac{R}{16}\left\{ (u_1-u_3)(v_2-v_4)-(u_2-u_4)(v_1-v_3) \right\}
+\end{displaymath}
+とするべきところを
+\begin{displaymath}
+  v_o = \frac{v_1+v_2+v_3+v_4}{4}+\frac{R}{16}\left\{ -(u_1-u_3)(v_2-v_4)+(u_2-u_4)(v_1-v_3) \right\}
+\end{displaymath}
+としていたため修正した.これにより,cavity中心から見て右上にあった中心渦の中心が左上に移動した.
+}
 
 また,これまでは流れ関数$\psi$渦度$\omega$の収束条件を,「すべての格子点において
 \begin{equation}
-  |\psi^n_{i,j}-\psi^{n-1}_{i,j}| < 0.001  かつ  |\omega^n_{i,j}-\omega^{n-1}_{i,j}| < 0.001
+  |\psi^n_{i,j}-\psi^{n-1}_{i,j}| < \textcolor{red}{0.0001}  かつ  |\omega^n_{i,j}-\omega^{n-1}_{i,j}| < \textcolor{red}{0.0001}
 \end{equation}
 が成り立つ」としていたが,これを「すべての格子点において
 \begin{equation}
-  |\psi^n_{i,j}-\psi^{n-1}_{i,j}| < 0.0001  かつ  |\omega^n_{i,j}-\omega^{n-1}_{i,j}| < 0.0001
+  |\psi^n_{i,j}-\psi^{n-1}_{i,j}| < \textcolor{red}{0.00001}  かつ  |\omega^n_{i,j}-\omega^{n-1}_{i,j}| < \textcolor{red}{0.00001}
 \end{equation}
-が成り立つ」に変更した.
+が成り立つ」に変更した.\textcolor{red}{(7/1提出時には式(1),(2)それぞれ$<0.001, <0.0001$と書き間違えていたので修正)}
 これにより,流線図においてcavity底面付近の逆流渦が大きくなったことが確認されたため,前回までの収束条件では十分に収束していなかったと考えられる.
 しかし,収束条件を厳しくした結果,格子点$151 × 151$に設定した時にはプログラムを実行してから30分程度経過しても収束条件を満たさなかった.
 そのため,今回は(i)レイノルズ数$Re = 50$, 格子点$51\times 51$, (ii)レイノルズ数$Re = 200$, 格子点$101\times 101$
@@ -43,7 +58,9 @@ captionpos = t
 速度ベクトルは, x = 0, 0.02, . . . 0.98, 1, y = 0, 0.02, . . . 0.98, 1 上のものを描画した.
 また,cavity底面付近の逆流渦の挙動を確認する為に,各格子点における速度ベクトルをその大きさで割り,
 速度ベクトルの向きのみを示した図を追加した.
-
+\textcolor{red}{
+さらに,cavity底面付近の逆流渦付近を拡大した速度ベクトル図も追加した.これは描画範囲の全ての格子点で描画した.
+}
 \subsection{等圧線図の描画}
 前回までは圧力のポアソン方程式を用いた差分方程式により圧力場を求めていたが,適切な結果が得られなかったため,\cite{2}で紹介された方法を用いた.
 無次元化された定常流のNavier-Stokes方程式は,
@@ -124,11 +141,40 @@ cavityにおいて反時計回りの比較的大きな渦が存在すること�
   \includegraphics[height=9.5cm]{outputs/img/velocity_abs_re200.png}
   \caption{速度ベクトルの向き(ii)}
 \end{figure}
+\textcolor{red}{
+底面付近の逆流渦を拡大した速度ベクトル図を図$5,6$に示す.
+\begin{figure}[H]
+  \begin{minipage}[c]{0.45\linewidth}
+    \centering
+    \includegraphics[height=7.5cm]{outputs/img/velocity_vector_corner1_re50.png}
+    \subcaption{cavity左底部}\label{ラベル1}
+  \end{minipage}
+  \begin{minipage}[c]{0.45\linewidth}
+    \centering
+    \includegraphics[height=7.5cm]{outputs/img/velocity_vector_corner2_re50.png}
+    \subcaption{cavity右底部}\label{ラベル2}
+  \end{minipage}
+  \caption{拡大した速度ベクトル図(i)}\label{ラベル}
+\end{figure}
+\begin{figure}[H]
+  \begin{minipage}[c]{0.45\linewidth}
+    \centering
+    \includegraphics[height=7.5cm]{outputs/img/velocity_vector_corner1_re200.png}
+    \subcaption{cavity左底部}\label{ラベル1}
+  \end{minipage}
+  \begin{minipage}[c]{0.45\linewidth}
+    \centering
+    \includegraphics[height=7.5cm]{outputs/img/velocity_vector_corner2_re200.png}
+    \subcaption{cavity右底部}\label{ラベル2}
+  \end{minipage}
+  \caption{拡大した速度ベクトル図(ii)}\label{ラベル}
+\end{figure}
+}
 
 
 \subsection{流線図}
 
-図5,6に今回得られた流線図を示す.
+図7,8に今回得られた流線図を示す.
 
 \begin{figure}[H]
   \centering
@@ -142,10 +188,38 @@ cavityにおいて反時計回りの比較的大きな渦が存在すること�
   \caption{流線図(ii)}
   \label{fig:velocity_vector_re200}
 \end{figure}
-
-
+\textcolor{red}{
+底面付近の逆流渦について拡大した流線図を図$9,10$に示す.ただし,流線間での流れ関数の差$\varDelta\psi$を底面付近の逆流渦内部で複数本引ける程度に小さくした時,
+$\psi>0$の領域で流線が過密になり塗りつぶされてしまうため,$\psi\leq0$となる$\psi$について流線図を書いた.
+\begin{figure}[H]
+  \begin{minipage}[b]{0.50\linewidth}
+    \centering
+    \includegraphics[height=7cm, clip, trim=300 150 100 50]{outputs/img/stream_line_corner1_re50.png}
+    \subcaption{cavity左底部}\label{ラベル1}
+  \end{minipage}
+  \begin{minipage}[b]{0.50\linewidth}
+    \centering
+    \includegraphics[height=7cm, clip, trim=300 150 100 50]{outputs/img/stream_line_corner2_re50.png}
+    \subcaption{cavity右底部}\label{ラベル2}
+  \end{minipage}
+  \caption{拡大した流線図(i)}\label{ラベル}
+\end{figure}
+\begin{figure}[H]
+  \begin{minipage}[c]{0.5\linewidth}
+    \centering
+    \includegraphics[height=7cm, clip, trim=300 150 100 50]{outputs/img/stream_line_corner1_re200.png}
+    \subcaption{cavity左底部}\label{ラベル1}
+  \end{minipage}
+  \begin{minipage}[c]{0.5\linewidth}
+    \centering
+    \includegraphics[height=7cm, clip, trim=300 150 100 50]{outputs/img/stream_line_corner2_re200.png}
+    \subcaption{cavity右底部}\label{ラベル2}
+  \end{minipage}
+  \caption{拡大した流線図(ii)}\label{ラベル}
+\end{figure}
+}
 \subsection{等圧線図}
-図7,8に今回得られた等圧線図を示す.
+図11,12に今回得られた等圧線図を示す.
 条件(i), (ii)ともに点(0,1)付近で圧力が高く,点(1,1)付近で圧力が低くなった.
 さらに,cavity上部中央付近でも圧力が基準圧より低い領域が見られた.
 

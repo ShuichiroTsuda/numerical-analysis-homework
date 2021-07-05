@@ -7,11 +7,11 @@ program cavity
         double precision p
     end type latticePoint
 
-    integer, parameter :: latticeSizeX = 51
-    integer, parameter :: latticeSizeY = 51
+    integer, parameter :: latticeSizeX = 101
+    integer, parameter :: latticeSizeY = 101
     integer :: offset = (latticeSizeX-1) / 50
 
-    double precision, parameter :: reynolds = 50
+    double precision, parameter :: reynolds = 200
 
     double precision :: h = 1.0 / (latticeSizeX-1)
     double precision :: size = 0.0
@@ -40,7 +40,7 @@ program cavity
         do i = 1, latticeSizeX
             do j = 1, latticeSizeY
                 lastLatticePoints = latticePoints
-                if (i == 1) then 
+                if (i == 1) then
                     latticePoints(i, j)%psi = 0
                     latticePoints(i, j)%omega = 2.0 * latticePoints(i + 1, j)%psi
                 else if (i == latticeSizeX) then
@@ -170,21 +170,17 @@ program cavity
     end do
     close(11)
 
-    open(12, file='outputs/data/u.csv')
-    do i = 1, latticeSizeX
-        do j = 1, latticeSizeY
-            write (12,'(3e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%u
-        end do
-    end do
-    close(12)
-
-    open(13, file='outputs/data/v.csv')
-    do i = 1, latticeSizeX
-        do j = 1, latticeSizeY
-            write (13,'(3e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%v
-        end do
-    end do
-    close(13)
+!    open(12, file='outputs/data/psi_corner1.csv')
+!    do i = 1, latticeSizeX
+!        do j = 1, latticeSizeY
+!            !if ((i-1)*h<=0.25 .and. (j-1)*h<=0.25) then
+!            if ((i-1)*h<=0.1 .and. (j-1)*h<=0.1) then
+!                write (12,'(3e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%psi
+!            end if
+!        end do
+!        write(12,'(/)',advance='no')
+!    end do
+!    close(12)
 
     open(14, file='outputs/data/velocity.csv')
     do i = 1, latticeSizeX
@@ -219,6 +215,27 @@ program cavity
         end do
     end do
     close(16)
+
+    open(17, file='outputs/data/velocity_corner1.csv')
+    do i = 1, latticeSizeX
+        do j = 1, latticeSizeY
+            !if ((i-1)*h<=0.25 .and. (j-1)*h<=0.25) then
+            if ((i-1)*h<=0.25 .and. (j-1)*h<=0.25) then
+                write (17,'(4e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%u, latticePoints(i, j)%v
+            end if
+        end do
+    end do
+    close(17)
+
+    open(18, file='outputs/data/velocity_corner2.csv')
+    do i = 1, latticeSizeX
+        do j = 1, latticeSizeY
+            if ((i-1)*h>=0.9 .and. (j-1)*h<=0.1) then
+                write (18,'(4e12.4)') (i-1)*h, (j-1)*h, latticePoints(i, j)%u, latticePoints(i, j)%v
+            end if
+        end do
+    end do
+    close(18)
 
     stop
     contains

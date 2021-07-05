@@ -287,6 +287,60 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/dvipsnam.def
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/dvipsnam.def
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/dvipsnam.def
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/dvipsnam.def
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlminr-v.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlminr-h.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
@@ -344,6 +398,9 @@ INPUT extractbb -B cropbox -O outputs/img/velocity_vector_re50.png
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlminr-v.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlminr-h.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlgothr-v.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlgothr-h.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
 INPUT ./outputs/img/velocity_vector_re200.png
 INPUT ./outputs/img/velocity_vector_re200.png
 INPUT outputs/img/velocity_vector_re200.png
@@ -356,6 +413,26 @@ INPUT ./outputs/img/velocity_abs_re200.png
 INPUT ./outputs/img/velocity_abs_re200.png
 INPUT outputs/img/velocity_abs_re200.png
 INPUT extractbb -B cropbox -O outputs/img/velocity_abs_re200.png
+INPUT ./outputs/img/velocity_vector_corner1_re50.png
+INPUT ./outputs/img/velocity_vector_corner1_re50.png
+INPUT outputs/img/velocity_vector_corner1_re50.png
+INPUT extractbb -B cropbox -O outputs/img/velocity_vector_corner1_re50.png
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlminr-v.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlgothr-v.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/japanese-otf/nmlgothr-h.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
+INPUT ./outputs/img/velocity_vector_corner2_re50.png
+INPUT ./outputs/img/velocity_vector_corner2_re50.png
+INPUT outputs/img/velocity_vector_corner2_re50.png
+INPUT extractbb -B cropbox -O outputs/img/velocity_vector_corner2_re50.png
+INPUT ./outputs/img/velocity_vector_corner1_re200.png
+INPUT ./outputs/img/velocity_vector_corner1_re200.png
+INPUT outputs/img/velocity_vector_corner1_re200.png
+INPUT extractbb -B cropbox -O outputs/img/velocity_vector_corner1_re200.png
+INPUT ./outputs/img/velocity_vector_corner2_re200.png
+INPUT ./outputs/img/velocity_vector_corner2_re200.png
+INPUT outputs/img/velocity_vector_corner2_re200.png
+INPUT extractbb -B cropbox -O outputs/img/velocity_vector_corner2_re200.png
 INPUT ./outputs/img/stream_line_re50.png
 INPUT ./outputs/img/stream_line_re50.png
 INPUT outputs/img/stream_line_re50.png
@@ -364,6 +441,22 @@ INPUT ./outputs/img/stream_line_re200.png
 INPUT ./outputs/img/stream_line_re200.png
 INPUT outputs/img/stream_line_re200.png
 INPUT extractbb -B cropbox -O outputs/img/stream_line_re200.png
+INPUT ./outputs/img/stream_line_corner1_re50.png
+INPUT ./outputs/img/stream_line_corner1_re50.png
+INPUT outputs/img/stream_line_corner1_re50.png
+INPUT extractbb -B cropbox -O outputs/img/stream_line_corner1_re50.png
+INPUT ./outputs/img/stream_line_corner2_re50.png
+INPUT ./outputs/img/stream_line_corner2_re50.png
+INPUT outputs/img/stream_line_corner2_re50.png
+INPUT extractbb -B cropbox -O outputs/img/stream_line_corner2_re50.png
+INPUT ./outputs/img/stream_line_corner1_re200.png
+INPUT ./outputs/img/stream_line_corner1_re200.png
+INPUT outputs/img/stream_line_corner1_re200.png
+INPUT extractbb -B cropbox -O outputs/img/stream_line_corner1_re200.png
+INPUT ./outputs/img/stream_line_corner2_re200.png
+INPUT ./outputs/img/stream_line_corner2_re200.png
+INPUT outputs/img/stream_line_corner2_re200.png
+INPUT extractbb -B cropbox -O outputs/img/stream_line_corner2_re200.png
 INPUT ./outputs/img/p_re50.png
 INPUT ./outputs/img/p_re50.png
 INPUT outputs/img/p_re50.png
